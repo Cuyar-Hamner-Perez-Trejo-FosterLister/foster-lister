@@ -1,0 +1,134 @@
+Database will consist of users and animals.
+
+Users: 	Admin (Shelter Staff)
+		Unregistered Users (Guests)
+		Users
+
+User Stories:
+
+- As an admin, I would expect to be able to see data displayed on the website. (Admin Dashboard)
+- As an admin, I would like to be able to add, delete, and edit a foster/adopt/volunteer listing.
+- Only admins (shelter staff) can post foster/adopt/volunteer listings.
+- As an admin, be able to delete users if necessary by going to their profile page.
+- As an admin, I expect to view users' profiles.
+- As an admin, profile will already be created, no need to fill out a registration form.
+    * Information is already set by organization.
+
+- As a guest, I expect to see foster/adopt/volunteer listings.
+- As a guest, I expect to be redirected to the general registration page
+(create an account) when I click on a button that says "I'm interested in ..."
+- As a guest, I expect to be able to register to for an account.
+
+- As a user, I expect to be able to login and logout.
+- As a user, I expect to have a profile page.
+- As a user, I expect to be able to edit my profile.
+- As a user, I expect to be able to search for animals by breed, pet name, etc.
+- As a user, I expect to be able to view all listings. Picture, pet's name, breed, age
+- As a user, I expect to be able to filter volunteer, adoption, and foster ads.
+- As a user, I expect to be able to filter dogs and cats.
+- As a user, I expect to be able to filter breeds.
+- As a user, I expect to be able to filter age.
+- As a user, I expect to be able to filter gender.
+- As a user, I expect to be able to fill out a form for adoption/foster/volunteer.
+- As a user, I expect to get confirmation after the form has been filled out and sent.
+- As a user, I don't have access to view other users' profiles.
+
+Nice to Have User Stories:
+
+Features:
+
+- General Registration (creates an account)
+- Login page
+- Dynamic NavBar
+	* Brand/Logo
+	* Link to Live Listings
+	* Registered User
+        * Avatar-icon, when clicked will have a dropdown:
+            + Avatar icon w/ Name
+            + Profile link
+            + Settings link (inactive)
+            + History page (past volunteering/adopting/fostering) link (inactive)
+            + Logout Button (redirect to login page)
+            + (Nice to have) FAQ link
+        (Only Admins will have an "add button" that links to "create a listing" page)
+   * Unregistered User
+        + No avatar or dropdown menu
+        + Sign-up button
+- User Profile
+    * Edit button
+    * Avatar (There will be a default)
+    * Name
+    * Email
+    * Phone Number
+    * Address
+    * # of pets
+    * Change password (nice to have)
+    * Delete Account button
+    * Foster/Adopter/Volunteer badges
+- Admin Dashboard
+    * Admin Profile
+            - Edit button
+            - Avatar (Photo)
+            - Name
+            - Email
+            - Title
+            - Change password (nice to have)
+	* Create Listing Page
+        * Two links/buttons: Foster/Adoption (dynamic form with checkbox for Foster or Adoption) and Volunteer
+        * Adoption Listing
+            + Listing ID
+            + Picture (?) Save api url to database
+            + Pet's Name
+            + Breed
+            + Age
+            + Gender
+            + Special Conditions
+            + "About me" (General Description)
+            + Weight/Size
+        * Foster Listing
+            + Listing ID
+            + Picture (?) Save api url to database
+            + Pet's Name
+            + Breed
+            + Age
+            + Gender
+            + Special Conditions
+            + "About me" (General Description)
+            + Weight/Size
+            + Litter Size (if applicable)
+            + Foster Duration (ex. "We need a foster for two months.")
+        * Volunteer Listing
+            + Listing ID
+            + Date
+            + Description
+            + Event (optional)
+   * Ad Management Table
+            + Search Bar (nice to have)
+            + Listing ID
+            + Listing Title
+            + Delete Button (Warning)
+            + Edit Button   (Redirects to listing's edit page/modal)
+- Different registration forms for volunteers/adopters/fosters (partials or redirect page)
+- Filter the listings (categories)
+- About Us page for the Shelter/Organization
+- Thank you page after a form has been filled out and sent to organization.
+    * "Thank you for filling out the registration"
+    * Application ID
+    * Expected wait time
+    * Email if they have any questions.
+- Error messages for general registration
+- Error messages for adopt/foster/volunteer forms
+- Sticky forms
+    * When a submission is rejected because one or more of our validation constraints fails,
+    we should still see the old values in the form for creating an ad, the users' input should not be erased.
+- Delete and Edit/Save button on individual listings. Warning message for delete. (confirmation)
+- Edit Listing Modal/Page
+
+
+Nice to have:
+
+- Notifications that alert the fosters of new listings
+- Donations / Discussion Feed (?)
+- Certification of fosters/adopters/volunteers
+- FAQ
+- Users being able to post ads of their own
