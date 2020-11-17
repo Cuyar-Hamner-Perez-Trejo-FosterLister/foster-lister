@@ -22,9 +22,9 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
+        User user = DaoFactory.getUsersDao().findByEmail(email);
 
         if (user == null) {
             response.sendRedirect("/login");
