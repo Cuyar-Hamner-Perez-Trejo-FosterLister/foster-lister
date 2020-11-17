@@ -24,7 +24,7 @@
                     <form class="form-inline">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search Breed, Age, Size, or Gender" aria-label="Search Breed, Age, Size, or Gender" aria-describedby="search-button">
-                            <div id ="dog-search" class="input-group-prepend">
+                            <div id ="search" class="input-group-prepend">
                                 <span class="input-group-text" id="search-button">@</span>
                             </div>
                         </div>
