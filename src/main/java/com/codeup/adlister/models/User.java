@@ -24,7 +24,7 @@ public class User {
 
     public User(String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets, String imgURL) {
         this.email = email;
-        this.password = password;
+        setPassword(password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -134,4 +134,5 @@ public class User {
     public void setAdmin(boolean admin) {
         isAdmin = admin;
     }
+
 }

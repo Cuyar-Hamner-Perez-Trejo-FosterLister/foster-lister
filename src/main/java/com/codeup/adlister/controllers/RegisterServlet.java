@@ -23,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
         String phonenumber = request.getParameter("phonenumber");
         int pets = Integer.parseInt(request.getParameter("pets"));
         String email = request.getParameter("email");
-        String imageUrl = request.getParameter("image");
+//        String imageUrl = request.getParameter("image");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
 
@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
                 || lastname.isEmpty()
                 || address.isEmpty()
                 || phonenumber.isEmpty()
-                || pets >= 0
+                || pets < 0
                 || email.isEmpty()
                 || password.isEmpty()
                 || (! password.equals(passwordConfirmation));
@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User user = new User(email, password, firstname, lastname, address, phonenumber, pets, imageUrl);
+        User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "");
         DaoFactory.getUsersDao().insert(user);
         response.sendRedirect("/login");
     }

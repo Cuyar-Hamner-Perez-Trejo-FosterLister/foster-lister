@@ -15,10 +15,10 @@
                         <h1>Register for an account</h1>
                     </div>
                     <div class="form-group col-md-6">
-                        <input id="first-name" name="first-name" class="form-control" type="text" placeholder="First Name">
+                        <input id="firstname" name="firstname" class="form-control" type="text" placeholder="First Name">
                     </div>
                     <div class="form-group col-md-6">
-                        <input id="last-name" name="last-name" class="form-control" type="text" placeholder="Last Name">
+                        <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Last Name">
                     </div>
                     <div class="form-group col-md-6">
                         <input id="phonenumber" name="phonenumber" class="form-control" type="text" placeholder="Phone Number">
