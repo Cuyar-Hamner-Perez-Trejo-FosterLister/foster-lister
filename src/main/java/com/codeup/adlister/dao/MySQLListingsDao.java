@@ -1,6 +1,6 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Listing;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -10,10 +10,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads {
+public class MySQLListingsDao implements Listings {
     private Connection connection = null;
 
-    public MySQLAdsDao(Config config) {
+    public MySQLListingsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -27,10 +27,10 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> all() {
+    public List<Listing> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM listings");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -39,13 +39,13 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insert(Ad ad) {
+    public Long insert(Listing listing) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO listings (user_id, title, description) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            stmt.setLong(1, listing.getUserId());
+            stmt.setString(2, listing.getTitle());
+            stmt.setString(3, listing.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -55,8 +55,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    private Ad extractAd(ResultSet rs) throws SQLException {
-        return new Ad(
+    private Listing extractAd(ResultSet rs) throws SQLException {
+        return new Listing(
             rs.getLong("id"),
             rs.getLong("user_id"),
             rs.getString("title"),
@@ -64,11 +64,11 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
-    private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
-        List<Ad> ads = new ArrayList<>();
+    private List<Listing> createAdsFromResults(ResultSet rs) throws SQLException {
+        List<Listing> listings = new ArrayList<>();
         while (rs.next()) {
-            ads.add(extractAd(rs));
+            listings.add(extractAd(rs));
         }
-        return ads;
+        return listings;
     }
 }
