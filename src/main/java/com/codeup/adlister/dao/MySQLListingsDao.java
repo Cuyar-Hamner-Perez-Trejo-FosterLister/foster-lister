@@ -34,7 +34,18 @@ public class MySQLListingsDao implements Listings {
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving all listings.", e);
+        }
+    }
+
+    public List<Listing> allDogs() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM listings WHERE type = 'dog';");
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all dog listings.", e);
         }
     }
 
