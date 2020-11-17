@@ -11,7 +11,7 @@
         <h1>Login</h1>
         <form action="/login" method="POST">
             <div class="form-group">
-                <input id="username" name="username" class="form-control" type="text" placeholder="username">
+                <input id="email" name="email" class="form-control" type="text" placeholder="email">
             </div>
             <div class="form-group">
                 <input id="password" name="password" class="form-control" type="password" placeholder="password">
