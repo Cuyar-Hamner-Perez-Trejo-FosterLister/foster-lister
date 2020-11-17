@@ -22,16 +22,16 @@ public class User {
         setPassword(password);
     }
 
-//    public User(String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets, String imgURL) {
-//        this.email = email;
-//        this.password = password;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.address = address;
-//        this.phoneNumber = phoneNumber;
-//        this. numberOfPets = numberOfPets;
-//        this.imgURL = imgURL;
-//    }
+    public User(String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets, String imgURL) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this. numberOfPets = numberOfPets;
+        this.imgURL = imgURL;
+    }
     public User(long id, String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets) {
         this.id = id;
         this.email = email;
