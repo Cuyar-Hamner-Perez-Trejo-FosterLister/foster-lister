@@ -1,11 +1,8 @@
-Database will consist of users and animals.
-
 Users: 	Admin (Shelter Staff)
 		Unregistered Users (Guests)
 		Users
 
 User Stories:
-
 - As an admin, I would expect to be able to see data displayed on the website. (Admin Dashboard)
 - As an admin, I would like to be able to add, delete, and edit a foster/adopt/volunteer listing.
 - Only admins (shelter staff) can post foster/adopt/volunteer listings.
@@ -29,14 +26,11 @@ User Stories:
 - As a user, I expect to be able to filter breeds.
 - As a user, I expect to be able to filter age.
 - As a user, I expect to be able to filter gender.
-- As a user, I expect to be able to fill out a form for adoption/foster/volunteer.
-- As a user, I expect to get confirmation after the form has been filled out and sent.
+- As a user, I expect to be able to request to adopt/foster/volunteer.
+- As a user, I expect to get confirmation after the request was sent.
 - As a user, I don't have access to view other users' profiles.
 
-Nice to Have User Stories:
-
 Features:
-
 - General Registration (creates an account)
 - Login page
 - Dynamic NavBar
@@ -108,16 +102,15 @@ Features:
             + Listing Title
             + Delete Button (Warning)
             + Edit Button   (Redirects to listing's edit page/modal)
-- Different registration forms for volunteers/adopters/fosters (partials or redirect page)
+- Button that says "I'm Interested in (Volunteering/Adopting/Fostering" and sends a request to the admin.
 - Filter the listings (categories)
-- About Us page for the Shelter/Organization
-- Thank you page after a form has been filled out and sent to organization.
-    * "Thank you for filling out the registration"
+- "About Us" page for the Shelter/Organization
+- Thank you page after a request has been sent.
+    * "Thank you for sending a request"
     * Application ID
     * Expected wait time
     * Email if they have any questions.
 - Error messages for general registration
-- Error messages for adopt/foster/volunteer forms
 - Sticky forms
     * When a submission is rejected because one or more of our validation constraints fails,
     we should still see the old values in the form for creating an ad, the users' input should not be erased.
@@ -126,7 +119,6 @@ Features:
 
 
 Nice to have:
-
 - Notifications that alert the fosters of new listings
 - Donations / Discussion Feed (?)
 - Certification of fosters/adopters/volunteers
