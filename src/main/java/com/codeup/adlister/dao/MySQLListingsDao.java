@@ -49,6 +49,17 @@ public class MySQLListingsDao implements Listings {
         }
     }
 
+    public List<Listing> allCats() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM listings WHERE type = 'cat';");
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all cat listings.", e);
+        }
+    }
+
     @Override
     public Long insert(Listing listing) {
         try {
