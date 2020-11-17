@@ -8,10 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <c:forEach var="ad" items="${ads}">
+        <c:forEach var="volunteer" items="${volunteers}">
             <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
+                <img src="${volunteer.image.url}" alt="Icon">
+            </div>
+            <div class="col-md-6">
+                <h2>${volunteer.title}</h2>
+                <p>${volunteer.description}</p>
+                <p>${volunteer.contact}</p>
+                <p><small>${volunteer.date}</small></p>
             </div>
         </c:forEach>
     </div>
