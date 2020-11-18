@@ -48,13 +48,24 @@
         </div>
 
 
-        <c:forEach var="listing" items="${listings}">
-            <div class="col-md-6">
-                <h2>${listing.name}</h2>
-                <p>${listing.dob}</p>
-                <p>${listing.breed}</p>
-            </div>
-        </c:forEach>
+
+        <div class="container" id="index-listing">
+            <c:forEach var="listing" items="${listings}">
+                <div class="">
+                    <div class="index-card border mx-3">
+                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                        <div class="">
+                            <p class="text-center">${listing.name}</p>
+                            <p class="text-center">${listing.dob} • ${listing.breed}</p>
+                        </div>
+                        <div class="border-top">
+                            <button type="button" class="btn btn-secondary">More Info</button>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
     </div>
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />

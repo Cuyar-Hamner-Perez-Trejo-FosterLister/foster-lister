@@ -20,17 +20,22 @@
         </c:when>
     </c:choose>
 
-    <div class="container">
+    <div id="volunteer-listing">
         <c:forEach var="volunteer" items="${volunteers}">
-            <div class="col-md-6">
-<%--                <img src="${volunteer.image_url}" alt="Icon">--%>
-            </div>
-            <div class="col-md-6">
-                <h2>${volunteer.title}</h2>
-                <p>${volunteer.description}</p>
-                <p>${volunteer.contact}</p>
-                <p><small>${volunteer.date}</small></p>
+            <div class="">
+                <div class="index-card border mx-3">
+                    <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                    <div class="">
+                        <h4 class="text-center">${volunteer.title}</h4>
+                        <p class="text-center"><small>${volunteer.date}</small></p>
+                    </div>
+                    <div class="border-top">
+                        <button type="button" class="btn btn-secondary">More Info</button>
+                    </div>
+                </div>
             </div>
         </c:forEach>
+
+
     </div>
 </body>

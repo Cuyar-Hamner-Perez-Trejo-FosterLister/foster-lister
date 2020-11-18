@@ -1,1 +1,7 @@
+#index-listing, #volunteer-listing {
+    display: flex;
+}
 
+.index-card {
+    width: 200px;
+}
