@@ -22,15 +22,15 @@ public class CreateAdServlet extends HttpServlet {
             .forward(request, response);
     }
 
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        User user = (User) request.getSession().getAttribute("user");
-//        Listing listing = new Listing(
-//            user.getId(),
-//            request.getParameter("name"),
-//            request.getParameter("age"),
-//            request.getParameter("breed")
-//        );
-//        DaoFactory.getListingsDao().insert(ad);
-//        response.sendRedirect("/ads");
-//    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = (User) request.getSession().getAttribute("user");
+        Listing listing = new Listing(
+            user.getId(),
+            request.getParameter("name"),
+            request.getParameter("age"),
+            request.getParameter("breed")
+        );
+        DaoFactory.getListingsDao().insert(ad);
+        response.sendRedirect("/ads");
+    }
 }
