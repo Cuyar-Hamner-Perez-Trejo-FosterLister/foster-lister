@@ -11,6 +11,11 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Foster Lister</a>
         </div>
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="/dogs">Dogs</a></li>
+            <li><a href="/cats">Cats</a></li>
+            <li><a href="/volunteers">Volunteers</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/register">Sign Up</a></li>
         </ul>
