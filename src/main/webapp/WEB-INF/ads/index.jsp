@@ -7,18 +7,20 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+    <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
+    <div class="container">
+        <h1>Here Are all the ads!</h1>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-        </div>
-    </c:forEach>
-</div>
+        <c:forEach var="ad" items="${ads}">
+            <div class="col-md-6">
+                <h2>${ad.title}</h2>
+                <p>${ad.description}</p>
+            </div>
+        </c:forEach>
+    </div>
 
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 </body>
 </html>

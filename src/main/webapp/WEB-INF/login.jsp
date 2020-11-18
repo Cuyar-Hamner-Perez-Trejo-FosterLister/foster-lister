@@ -19,5 +19,8 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+
+    <jsp:include page="partials/footer.jsp" />
+    <jsp:include page="partials/bootstrap-script.jsp" />
 </body>
 </html>
