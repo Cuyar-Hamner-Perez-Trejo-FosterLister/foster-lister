@@ -34,10 +34,22 @@
                 </div>
             </div>
         </div>
+        <h2>All Dogs</h2>
+        <c:forEach var="dogs" items="${dogs}">
+            <div class=“col-md-6”>
+                <h2>${dogs.name}</h2>
+                <p>${dogs.dob}</p>
+                <p>${dogs.breed}</p>
+            </div>
+        </c:forEach>
 
-
-        <c:forEach var="listing" items="${listings}">
-
+        <h2>All Cats</h2>
+        <c:forEach var="cats" items="${cats}">
+            <div class=“col-md-6”>
+                <h2>${cats.name}</h2>
+                <p>${cats.dob}</p>
+                <p>${cats.breed}</p>
+            </div>
         </c:forEach>
     </div>
 
