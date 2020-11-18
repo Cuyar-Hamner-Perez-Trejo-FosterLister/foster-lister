@@ -46,6 +46,15 @@
                 </div>
             </div>
         </div>
+        <h2>All Dogs</h2>
+        <c:forEach var="dogs" items="${dogs}">
+            <div class=“col-md-6”>
+                <h2>${dogs.name}</h2>
+                <p>${dogs.dob}</p>
+                <p>${dogs.breed}</p>
+            </div>
+        </c:forEach>
+
 
 
 
@@ -65,6 +74,7 @@
                 </div>
             </c:forEach>
         </div>
+
 
     </div>
 

@@ -32,6 +32,17 @@ public class User {
         this. numberOfPets = numberOfPets;
         this.imgURL = imgURL;
     }
+    public User(long id, String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets, String imgURL) {
+        this.id = id;
+        this.email = email;
+        setPassword(password);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this. numberOfPets = numberOfPets;
+        this.imgURL = imgURL;
+    }
     public User(long id, String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets) {
         this.id = id;
         this.email = email;

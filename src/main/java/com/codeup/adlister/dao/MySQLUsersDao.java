@@ -58,6 +58,31 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error creating new user", e);
         }
     }
+@Override
+    public void update(User user){
+        String query = "UPDATE users SET email = ?, first_name = ?, last_name = ?, password = ?, address = ?, number_pets = ?, phone = ?, image_url = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, user.getEmail());
+            stmt.setString(2, user.getFirstName());
+            stmt.setString(3,user.getLastName());
+            stmt.setString(4,user.getPassword());
+            stmt.setString(5,user.getAddress());
+            stmt.setInt(6,user.getNumberOfPets());
+            stmt.setString(7,user.getPhoneNumber());
+            stmt.setString(8, user.getImgURL());
+            stmt.setLong(9, user.getId());
+            stmt.execute();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            rs.next();
+        } catch (SQLException e){
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getSQLState());
+            throw new RuntimeException("Error updating user", e);
+
+        }
+
+    }
 
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
