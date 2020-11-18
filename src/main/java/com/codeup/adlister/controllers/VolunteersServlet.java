@@ -13,6 +13,6 @@ import java.io.IOException;
 public class VolunteersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("volunteers", DaoFactory.getVolunteersDao().all());
-        request.getRequestDispatcher("/WEB-INFO/ads/volunteers-listing.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/volunteer-listings.jsp").forward(request, response);
     }
 }

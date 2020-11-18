@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/cats">Cats</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/volunteers">Volunteers</a>
+                <a class="nav-link" href="/volunteer-listings">Volunteers</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

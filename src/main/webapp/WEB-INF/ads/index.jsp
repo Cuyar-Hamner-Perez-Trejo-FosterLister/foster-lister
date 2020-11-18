@@ -12,12 +12,17 @@
     <div class="container">
         <h1>Here Are all the ads!</h1>
 
-        <c:forEach var="ad" items="${ads}">
-            <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
-            </div>
-        </c:forEach>
+            <c:forEach var="listing" items="${listings}">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="image of dog">
+                <div class="card-body">
+                    <p class="card-text">${listing.name}</p>
+                    <p class="card-text">${listing.dob}</p>
+                    <p class="card-text">${listing.breed}</p>
+                </div>
+                </div>
+            </c:forEach>
+
     </div>
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />

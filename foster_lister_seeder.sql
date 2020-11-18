@@ -13,18 +13,18 @@ VALUES ('jim.eagle23@example.com', 'Jim', 'Eagle', '$2a$12$/3bvW/pqZV.xn0saGpJMx
 /*Kelly password = kellykapoor */
 /*Rocky password = rockybalboa */
 
-INSERT INTO listings (user_id, image_url, name, type, breed, dob, gender, conditions, description, size, litter_size, foster_duration, created_time, role_id)
-VALUES (1, '', 'Fluffy', 'Cat', 'Bengal', '3-5 years', 'F', 'None', 'Loveable playful cat needing a home', 'young adult', null, 'N/A', '2020-05-17 07:12:56', 1 ),
-       (1, 'https://images.dog.ceo/breeds/affenpinscher/n02110627_6796.jpg', 'Max', 'Dog', 'Affenpinscher', '6-7 years', 'M', 'None', 'Lovable cuddly puppy dog', 'Small', 0, '4 months', '2020-09-10 09:11:56', 2),
-       (4, '', 'Maximillion', 'Cat', 'Main Coon', '1-2 years', 'M', 'Special Medication', 'Young cat looking for a nice home.', 'young adult', null, 'None', '2020-04-10 12:10:45', 1),
-       (4,'', 'Wendy', 'Dog', 'Scottish Terrier', '4-5 years', 'F', '', 'Dog looking for a great home. Pet-friendly.', 'adult', null, '1 month', '2019-11-10 09:32:12', 2);
-
 INSERT INTO roles (name)
 VALUES ('Adoption'),
 ('Foster'),
 ('Volunteer');
 
 INSERT INTO users_roles (user_id, role_id) VALUES (2,2), (3,1), (3,3), (5,1), (5,2), (5,3);
+
+INSERT INTO listings (user_id, image_url, name, type, breed, dob, gender, conditions, description, size, litter_size, foster_duration, created_time, role_id)
+VALUES (1, '', 'Fluffy', 'Cat', 'Bengal', '3-5 years', 'F', 'None', 'Loveable playful cat needing a home', 'young adult', null, 'N/A', '2020-05-17 07:12:56', 1 ),
+       (1, 'https://images.dog.ceo/breeds/affenpinscher/n02110627_6796.jpg', 'Max', 'Dog', 'Affenpinscher', '6-7 years', 'M', 'None', 'Lovable cuddly puppy dog', 'Small', 0, '4 months', '2020-09-10 09:11:56', 2),
+       (4, '', 'Maximillion', 'Cat', 'Main Coon', '1-2 years', 'M', 'Special Medication', 'Young cat looking for a nice home.', 'young adult', null, 'None', '2020-04-10 12:10:45', 1),
+       (4,'', 'Wendy', 'Dog', 'Scottish Terrier', '4-5 years', 'F', '', 'Dog looking for a great home. Pet-friendly.', 'adult', null, '1 month', '2019-11-10 09:32:12', 2);
 
 INSERT INTO requests (user_id, listing_id, request_date)
 VALUES (2, 2, '2020-09-10 09:11:56');

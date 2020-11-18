@@ -10,7 +10,7 @@
     <div class="container">
         <c:forEach var="volunteer" items="${volunteers}">
             <div class="col-md-6">
-                <img src="${volunteer.image.url}" alt="Icon">
+<%--                <img src="${volunteer.image_url}" alt="Icon">--%>
             </div>
             <div class="col-md-6">
                 <h2>${volunteer.title}</h2>
