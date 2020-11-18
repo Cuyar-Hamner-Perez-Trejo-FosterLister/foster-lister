@@ -43,5 +43,8 @@
             </div>
         </c:forEach>
     </div>
+
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 </body>
 </html>

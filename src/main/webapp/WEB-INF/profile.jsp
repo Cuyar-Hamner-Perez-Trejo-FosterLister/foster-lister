@@ -12,5 +12,7 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
+    <jsp:include page="partials/footer.jsp" />
+    <jsp:include page="partials/bootstrap-script.jsp" />
 </body>
 </html>
