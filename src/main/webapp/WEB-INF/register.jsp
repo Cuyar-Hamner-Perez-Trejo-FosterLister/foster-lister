@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <form action="/register" method="post">
                         <div>
-                            <h1>Register for an account</h1>
+                            <h1 class="text-center">Register for an account</h1>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
