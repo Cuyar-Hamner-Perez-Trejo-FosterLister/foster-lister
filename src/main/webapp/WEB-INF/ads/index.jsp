@@ -7,7 +7,17 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+        <c:choose>
+            <c:when test = "${sessionScope.user == null}">
+                <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+            </c:when>
+            <c:when test = "${sessionScope.user.admin == false}">
+                <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+            </c:when>
+            <c:when test = "${sessionScope.user.admin == true}">
+                <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+            </c:when>
+        </c:choose>
 
     <div class="container">
         <h1>Here Are all the ads!</h1>
