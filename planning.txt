@@ -119,8 +119,11 @@ Features:
 
 
 Nice to have:
+- Admins have the ability to add a user.
 - Notifications that alert the fosters of new listings
 - Donations / Discussion Feed (?)
 - Certification of fosters/adopters/volunteers
 - FAQ
 - Users being able to post ads of their own
+- Avatar
+- About Us
