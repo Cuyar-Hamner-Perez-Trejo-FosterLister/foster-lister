@@ -7,5 +7,5 @@ import java.util.List;
 public interface Users {
     User findByEmail(String email);
     Long insert(User user);
-    Long update(User user);
+    void update(User user);
 }

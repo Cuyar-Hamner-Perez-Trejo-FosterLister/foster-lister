@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-public class UpdateUserServlet {
-    @WebServlet(name = "controllers.UpdateUserServlet", urlPatterns = "/update-user")
-    public class UpdateUser extends HttpServlet {
+@WebServlet(name = "controllers.UpdateUserServlet", urlPatterns = "/update-user")
+    public class UpdateUserServlet extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             request.getRequestDispatcher("/WEB-INF/editprofile.jsp").forward(request, response);
         }
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
             User user = (User) request.getSession().getAttribute("user");
+
             String firstname = user.getFirstName();
             String lastname = user.getLastName();
             String address = request.getParameter("address");
@@ -42,10 +41,12 @@ public class UpdateUserServlet {
             }
 
             // create and edit a current user
-            User editUser = new User(email, password, firstname, lastname, address, phonenumber, pets, "");
+            User editUser = new User(user.getId(), email, password, firstname, lastname, address, phonenumber, pets, "");
+            System.out.println(editUser.getId());
             DaoFactory.getUsersDao().update(editUser);
+            request.getSession().setAttribute("user", editUser);
             response.sendRedirect("/ads");
         }
     }
 
-}
+

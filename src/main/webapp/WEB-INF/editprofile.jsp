@@ -15,16 +15,16 @@
 <body>
     <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
     <div class="container">
-        <h1>Login</h1>
+        <h1>Edit Profile</h1>
         <form action="/update-user" method="POST">
             <div class="form-group">
                 <input id="address" name="address" class="form-control" type="text" value=${user.address}>
             </div>
             <div class="form-group">
-                <input id="phone" name="phonenumber" class="form-control" type="text" value=${user.phone}>
+                <input id="phone" name="phonenumber" class="form-control" type="text" value=${user.phoneNumber}>
             </div>
             <div class="form-group">
-                <input id="pets" name="pets" class="form-control" type="text" value=${user.number_pets}>
+                <input id="pets" name="pets" class="form-control" type="text" value=${user.numberOfPets}>
             </div>
             <div class="form-group">
                 <input id="password" name="password" class="form-control" type="password" placeholder="Edit Password">

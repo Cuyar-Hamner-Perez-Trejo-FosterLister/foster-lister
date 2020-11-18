@@ -59,10 +59,10 @@ public class MySQLUsersDao implements Users {
         }
     }
 @Override
-    public Long update(User user){
-        String query = "UPDATE users SET email = ?, first_name = ?, last_name = ?, password = ?, address = ?, number_pets = ?, phone = ?, is_admin = ?, image_url = ? WHERE id = ?";
+    public void update(User user){
+        String query = "UPDATE users SET email = ?, first_name = ?, last_name = ?, password = ?, address = ?, number_pets = ?, phone = ?, image_url = ? WHERE id = ?";
         try {
-            PreparedStatement stmt = connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, user.getEmail());
             stmt.setString(2, user.getFirstName());
             stmt.setString(3,user.getLastName());
@@ -70,15 +70,16 @@ public class MySQLUsersDao implements Users {
             stmt.setString(5,user.getAddress());
             stmt.setInt(6,user.getNumberOfPets());
             stmt.setString(7,user.getPhoneNumber());
-            stmt.setBoolean(8, false);
-            stmt.setString(9, user.getImgURL());
-            stmt.setLong(10, user.getId());
-            stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+            stmt.setString(8, user.getImgURL());
+            stmt.setLong(9, user.getId());
+            stmt.execute();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            rs.next();
         } catch (SQLException e){
-            throw new RuntimeException("Error updating user");
+            System.out.println(e.getErrorCode());
+            System.out.println(e.getSQLState());
+            throw new RuntimeException("Error updating user", e);
+
         }
 
     }
