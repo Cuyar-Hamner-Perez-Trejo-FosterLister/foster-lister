@@ -12,9 +12,11 @@
     <c:choose>
         <c:when test = "${sessionScope.user == null}">
             <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+            <% request.setAttribute("admin", false); %>
         </c:when>
         <c:when test = "${sessionScope.user.admin == true}">
             <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+            <% request.setAttribute("admin", true); %>
         </c:when>
     </c:choose>
 
@@ -70,11 +72,11 @@
                             <c:when test="${sessionScope.user.admin == true}">
                                 <div class="form-row mx-auto">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="is-admin" id="is-admin-true" value="1" required>
+                                        <input class="form-check-input" type="radio" name="is-admin" id="is-admin-true" value="true" required>
                                         <label class="form-check-label" for="is-admin-true">User is an Admin</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="is-admin" id="is-admin-false" value="0">
+                                        <input class="form-check-input" type="radio" name="is-admin" id="is-admin-false" value="false">
                                         <label class="form-check-label" for="is-admin-false">User is not an Admin</label>
                                     </div>
                                 </div>
