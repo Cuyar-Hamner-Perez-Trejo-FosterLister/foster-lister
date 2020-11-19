@@ -18,11 +18,13 @@
             <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
         </c:when>
     </c:choose>
+
     <div class="container">
-        <h3>volunteer.title</h3>
-        <p>volunteer.date</p>
-        <p>volunteer.description</p>
-        <p>volunteer.contact</p>
+        <img src="${volunteer.imageUrl}">
+        <h3>${volunteer.title}</h3>
+        <p>${volunteer.date}</p>
+        <p>${volunteer.description}</p>
+        <p>${volunteer.contact}</p>
     </div>
 
     <jsp:include page="../partials/footer.jsp" />

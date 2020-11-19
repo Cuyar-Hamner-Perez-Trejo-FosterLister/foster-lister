@@ -8,4 +8,7 @@ public interface Volunteers {
 
     //insert a new volunteer ad
     Long insert(Volunteer volunteer);
+
+    //search for one listing and return it
+    Volunteer searchVolunteer(Long volunteerID);
 }
