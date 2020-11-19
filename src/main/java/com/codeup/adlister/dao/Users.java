@@ -8,4 +8,5 @@ public interface Users {
     User findByEmail(String email);
     Long insert(User user);
     void update(User user);
+    void destroy(long id);
 }
