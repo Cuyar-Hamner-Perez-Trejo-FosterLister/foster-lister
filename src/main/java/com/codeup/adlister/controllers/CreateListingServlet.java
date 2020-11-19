@@ -3,6 +3,7 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Listing;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.models.Volunteer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,17 +41,24 @@ public class CreateListingServlet extends HttpServlet {
     }
 
 
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        User user = (User) request.getSession().getAttribute("user");
-//        Listing listing = new Listing(
-//            user.getId(),
-//            request.getParameter("name"),
-//            request.getParameter("age"),
-//            request.getParameter("breed")
-//        );
-//        DaoFactory.getListingsDao().insert(ad);
-//        response.sendRedirect("/ads");
-//    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User user = (User) request.getSession().getAttribute("user");
+        String type = (String) request.getSession().getAttribute("choice");
+        long typeID;
+
+        if (type.equals("volunteer")) {
+            Volunteer volunteer = new Volunteer(
+                    user.getId(),
+                    request.getParameter("date"),
+                    request.getParameter("title"),
+                    request.getParameter("descriptionVolunteer"),
+                    request.getParameter("contact")
+            );
+            DaoFactory.getVolunteersDao().insert(volunteer);
+            response.sendRedirect("/ads");
+        }
+
+    }
 
    
 }
