@@ -11,33 +11,33 @@ User Stories:
 - As an admin, profile will already be created, no need to fill out a registration form.
     * Information is already set by organization.
 
-- As a guest, I expect to see foster/adopt/volunteer listings.
-- As a guest, I expect to be redirected to the general registration page
-(create an account) when I click on a button that says "I'm interested in ..."
-- As a guest, I expect to be able to register to for an account.
+X As a guest, I expect to see foster/adopt/volunteer listings.
+_ As a guest, I expect to be redirected to the general registration page
+(create an account) when I click on a button that says "I'm interested in ..." (Check for Session in jsp)
+X As a guest, I expect to be able to register to for an account.
 
-- As a user, I expect to be able to login and logout.
-- As a user, I expect to have a profile page.
-- As a user, I expect to be able to edit my profile.
-- As a user, I expect to be able to search for animals by breed, pet name, etc.
-- As a user, I expect to be able to view all listings. Picture, pet's name, breed, age
-- As a user, I expect to be able to filter volunteer, adoption, and foster ads.
-- As a user, I expect to be able to filter dogs and cats.
-- As a user, I expect to be able to filter breeds.
-- As a user, I expect to be able to filter age.
-- As a user, I expect to be able to filter gender.
+X As a user, I expect to be able to login and logout.
+X As a user, I expect to have a profile page.
+X As a user, I expect to be able to edit my profile.
+- As a user, I expect to be able to search for animals by breed, pet name, etc. (Filter Phase)
+X As a user, I expect to be able to view all listings. Picture, pet's name, breed, age
+- As a user, I expect to be able to filter volunteer, adoption, and foster ads. (Filter Phase)
+X As a user, I expect to be able to filter dogs and cats.
+- As a user, I expect to be able to filter breeds. (Filter)
+- As a user, I expect to be able to filter age. (Filter)
+- As a user, I expect to be able to filter gender. (Filter)
 - As a user, I expect to be able to request to adopt/foster/volunteer.
 - As a user, I expect to get confirmation after the request was sent.
-- As a user, I don't have access to view other users' profiles.
+X As a user, I don't have access to view other users' profiles.
 
 Features:
-- General Registration (creates an account)
-- Login page
-- Dynamic NavBar
+X General Registration (creates an account)
+X Login page
+X Dynamic NavBar
 	* Brand/Logo
 	* Link to Live Listings
 	* Registered User
-        * Avatar-icon, when clicked will have a dropdown:
+        * Avatar-icon, when clicked will have a dropdown: (Nice to Have)
             + Avatar icon w/ Name
             + Profile link
             + Settings link (inactive)
@@ -58,7 +58,7 @@ Features:
     * # of pets
     * Change password (nice to have)
     * Delete Account button
-    * Foster/Adopter/Volunteer badges
+    * Foster/Adopter/Volunteer badges (nice to have)
 - Admin Dashboard
     * Admin Profile
             - Edit button
