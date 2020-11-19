@@ -47,9 +47,7 @@
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 
         <script>
-            function sendID(id) {
-                console.log(window.location.href + "listing-info?listing=" + id);
-            }
+            const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
         </script>
 </body>
 </html>

@@ -57,6 +57,20 @@ public class MySQLListingsDao implements Listings {
         }
     }
 
+    public Listing searchListing(Long listingID) {
+        PreparedStatement stmt = null;
+        try {
+            String query = "SELECT * FROM listings WHERE id = ?";
+            stmt = connection.prepareStatement(query);
+            stmt.setLong(1, listingID);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractListing(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving listing.", e);
+        }
+    }
+
     @Override
     public Long insert(Listing listing) {
         try {
