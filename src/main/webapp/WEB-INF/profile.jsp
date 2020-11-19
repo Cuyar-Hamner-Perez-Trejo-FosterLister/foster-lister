@@ -17,7 +17,6 @@
         </c:when>
         <c:when test = "${sessionScope.user.admin == true}">
             <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
-            <jsp:include page="partials/admin-side-nav.jsp" />
         </c:when>
     </c:choose>
 
