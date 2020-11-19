@@ -19,4 +19,6 @@ public interface Listings {
 
     // insert a new ad and return the new ad's id
     Long insert(Listing listing);
+
+    void destroyListing(long id);
 }
