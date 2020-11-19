@@ -58,7 +58,7 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error creating new user", e);
         }
     }
-@Override
+    @Override
     public void update(User user){
         String query = "UPDATE users SET email = ?, first_name = ?, last_name = ?, password = ?, address = ?, number_pets = ?, phone = ?, image_url = ? WHERE id = ?";
         try {
@@ -84,6 +84,18 @@ public class MySQLUsersDao implements Users {
 
     }
 
+    @Override
+    public void destroy(long id) {
+        String query = "DELETE FROM users WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting user");
+        }
+    }
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -101,5 +113,6 @@ public class MySQLUsersDao implements Users {
                 rs.getBoolean("is_admin")
         );
     }
+
 
 }
