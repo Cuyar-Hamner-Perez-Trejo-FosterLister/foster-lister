@@ -3,19 +3,19 @@ package com.codeup.adlister.models;
 public class Request {
     private long id;
     private long userId;
-    private long roleId;
+    private long listingId;
     private String requestDate;
 
-    public Request(long id, long userId, long roleId, String requestDate){
+    public Request(long id, long userId, long listingId, String requestDate){
         this.id = id;
         this.userId = userId;
-        this.roleId = roleId;
+        this.listingId = listingId;
         this.requestDate = requestDate;
     }
 
     public Request(long userId, long roleId, String requestDate){
         this.userId = userId;
-        this.roleId = roleId;
+        this.listingId = roleId;
         this.requestDate = requestDate;
     }
 
@@ -35,12 +35,12 @@ public class Request {
         this.userId = userId;
     }
 
-    public long getRoleId() {
-        return roleId;
+    public long getListingId() {
+        return listingId;
     }
 
-    public void setRoleId(long roleId) {
-        this.roleId = roleId;
+    public void setListingId(long listingId) {
+        this.listingId = listingId;
     }
 
     public String getRequestDate() {
