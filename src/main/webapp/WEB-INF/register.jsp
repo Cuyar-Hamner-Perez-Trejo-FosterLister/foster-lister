@@ -4,6 +4,7 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For An Account" />
     </jsp:include>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
     <jsp:include page="partials/guest-navbar.jsp" />
