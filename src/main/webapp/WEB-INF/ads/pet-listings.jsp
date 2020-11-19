@@ -14,7 +14,19 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+
+    <c:choose>
+        <c:when test = "${sessionScope.user == null}">
+            <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == false}">
+            <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == true}">
+            <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+        </c:when>
+    </c:choose>
+
     <div class="container">
         <!--Filter Container -->
         <div class="container">
@@ -43,14 +55,27 @@
             </div>
         </c:forEach>
 
-        <h2>All Cats</h2>
-        <c:forEach var="cats" items="${cats}">
-            <div class=“col-md-6”>
-                <h2>${cats.name}</h2>
-                <p>${cats.dob}</p>
-                <p>${cats.breed}</p>
-            </div>
-        </c:forEach>
+
+
+
+        <div class="container" id="index-listing">
+            <c:forEach var="listing" items="${listings}">
+                <div class="">
+                    <div class="index-card border mx-3">
+                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                        <div class="">
+                            <p class="text-center">${listing.name}</p>
+                            <p class="text-center">${listing.dob} • ${listing.breed}</p>
+                        </div>
+                        <div class="border-top">
+                            <button type="button" class="btn btn-secondary">More Info</button>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+
+
     </div>
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />

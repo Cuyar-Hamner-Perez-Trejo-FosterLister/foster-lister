@@ -7,22 +7,40 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+        <c:choose>
+            <c:when test = "${sessionScope.user == null}">
+                <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+            </c:when>
+            <c:when test = "${sessionScope.user.admin == false}">
+                <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+            </c:when>
+            <c:when test = "${sessionScope.user.admin == true}">
+                <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+            </c:when>
+        </c:choose>
 
-    <div class="container">
-        <h1>Here Are all the ads!</h1>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Welcome to Foster Lister</h1>
+                <p class="lead">lorem ipsum</p>
+            </div>
+        </div>
 
-            <c:forEach var="listing" items="${listings}">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="image of dog">
-                <div class="card-body">
-                    <p class="card-text">${listing.name}</p>
-                    <p class="card-text">${listing.dob}</p>
-                    <p class="card-text">${listing.breed}</p>
+    <div id="index-listing">
+        <c:forEach var="listing" items="${listings}">
+            <div class="">
+                <div class="index-card border mx-3">
+                    <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                    <div class="">
+                        <p class="text-center">${listing.name}</p>
+                        <p class="text-center">${listing.dob} • ${listing.breed}</p>
+                    </div>
+                    <div class="border-top">
+                        <button type="button" class="btn btn-secondary">More Info</button>
+                    </div>
                 </div>
-                </div>
-            </c:forEach>
-
+            </div>
+        </c:forEach>
     </div>
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />

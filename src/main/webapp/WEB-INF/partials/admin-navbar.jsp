@@ -19,12 +19,16 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     ${sessionScope.user.firstName} ${sessionScope.user.lastName}
+                    ${sessionScope.user.firstName} ${sessionScope.user.lastName}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%--href will need to be /admin-dashboard, once we create that servlet and jsp--%>
+                    <a class="dropdown-item" href="#">Dashboard</a>
                     <a class="dropdown-item" href="/profile">Profile</a>
                     <%--href will need to be /about-us, once we create that servlet and jsp--%>
                     <a class="dropdown-item" href="#">Edit Profile</a>
+                    <%--href will need to be /createAdServlet, once we create that servlet and jsp--%>
+                    <a class="dropdown-item" href="#">Create Listing</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
                     <div class="dropdown-divider"></div>
                     <%--href will need to be /about-us, once we create that servlet and jsp--%>
