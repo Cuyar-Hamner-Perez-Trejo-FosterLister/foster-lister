@@ -24,5 +24,8 @@
         <p>volunteer.description</p>
         <p>volunteer.contact</p>
     </div>
+
+    <jsp:include page="../partials/footer.jsp" />
+    <jsp:include page="../partials/bootstrap-script.jsp" />
 </body>
 </html>

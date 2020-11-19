@@ -36,7 +36,7 @@
                         <p class="text-center">${listing.dob} • ${listing.breed}</p>
                     </div>
                     <div class="border-top">
-                        <button type="button" class="btn btn-secondary">More Info</button>
+                        <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
                     </div>
                 </div>
             </div>
@@ -45,5 +45,11 @@
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
+
+        <script>
+            function sendID(id) {
+                console.log(window.location.href + "listing-info?listing=" + id);
+            }
+        </script>
 </body>
 </html>
