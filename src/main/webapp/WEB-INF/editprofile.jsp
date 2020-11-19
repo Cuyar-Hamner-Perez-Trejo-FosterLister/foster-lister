@@ -18,18 +18,23 @@
         <h1>Edit Profile</h1>
         <form action="/update-user" method="POST">
             <div class="form-group">
+                <label for="address">Edit Address</label>
                 <input id="address" name="address" class="form-control" type="text" value=${user.address}>
             </div>
             <div class="form-group">
+                <label for="phone">Edit Phone Number</label>
                 <input id="phone" name="phonenumber" class="form-control" type="text" value=${user.phoneNumber}>
             </div>
             <div class="form-group">
+                <label for="pets">Edit Number of Pets</label>
                 <input id="pets" name="pets" class="form-control" type="text" value=${user.numberOfPets}>
             </div>
             <div class="form-group">
+                <label for="password">Reset Password</label>
                 <input id="password" name="password" class="form-control" type="password" placeholder="Edit Password">
             </div>
             <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password">
             </div>
 
