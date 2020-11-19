@@ -56,7 +56,7 @@
 <%--        </c:forEach>--%>
 
         <div class="container" id="index-listing">
-            <c:forEach var="listing" items="${listings}">
+            <c:forEach var="cats" items="${cat}">
                 <div class="">
                     <div class="index-card border mx-3">
                         <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
@@ -78,9 +78,7 @@
     <jsp:include page="/WEB-INF/partials/footer.jsp" />
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 <script>
-    function sendID(id) {
-        console.log(window.location.href + "listing-info?listing=" + id);
-    }
+    const sendID = (id) => window.location.href + "listing-info?listing=" + id
 </script>
 </body>
 

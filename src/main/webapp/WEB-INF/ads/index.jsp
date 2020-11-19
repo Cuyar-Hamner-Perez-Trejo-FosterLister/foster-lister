@@ -36,7 +36,7 @@
                         <p class="text-center">${listing.dob} • ${listing.breed}</p>
                     </div>
                     <div class="border-top">
-                        <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
+<%--                        <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>--%>
                     </div>
                 </div>
             </div>
