@@ -7,14 +7,16 @@ public class Volunteer {
     private String title;
     private String description;
     private String contact;
+    private String imageUrl;
 
-    public Volunteer(long id, long userId, String date, String title, String description, String contact) {
+    public Volunteer(long id, long userId, String date, String title, String description, String contact, String imageUrl) {
         this.id = id;
         this.userId = userId;
         this.date = date;
         this.title = title;
         this.description = description;
         this.contact = contact;
+        this.imageUrl = imageUrl;
     }
 
     public Volunteer(long userId, String date, String title, String description, String contact) {
@@ -50,6 +52,8 @@ public class Volunteer {
         this.contact = contact;
     }
 
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+
     public long getId() {
         return id;
     }
@@ -74,4 +78,5 @@ public class Volunteer {
         return contact;
     }
 
+    public String getImageUrl() { return imageUrl; }
 }

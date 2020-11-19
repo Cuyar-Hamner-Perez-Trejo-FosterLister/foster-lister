@@ -46,14 +46,6 @@
                 </div>
             </div>
         </div>
-<%--        <h2>All Dogs</h2>--%>
-<%--        <c:forEach var="dogs" items="${dogs}">--%>
-<%--            <div class=“col-md-6”>--%>
-<%--                <h2>${dogs.name}</h2>--%>
-<%--                <p>${dogs.dob}</p>--%>
-<%--                <p>${dogs.breed}</p>--%>
-<%--            </div>--%>
-<%--        </c:forEach>--%>
 
         <div class="container" id="index-listing">
             <c:forEach var="listing" items="${listings}">
@@ -77,12 +69,10 @@
 
     <jsp:include page="/WEB-INF/partials/footer.jsp" />
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
-<script>
-    function sendID(id) {
-        console.log(window.location.href + "listing-info?listing=" + id);
-    }
-</script>
+
+    <script>
+        const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
+    </script>
+
 </body>
-
-
 </html>

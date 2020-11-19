@@ -22,8 +22,5 @@ public class ViewListingServlet extends HttpServlet {
             request.setAttribute("listing", listing);
             request.getRequestDispatcher("/WEB-INF/ads/foster-listing.jsp").forward(request, response);
         }
-
-
-
     }
 }
