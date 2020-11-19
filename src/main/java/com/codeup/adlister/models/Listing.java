@@ -37,7 +37,7 @@ public class Listing {
     }
 
     // INSERT constructor
-    public Listing(long userId, String imageUrl, String name, String type, String breed, String dob, Character gender, String conditions, String description, String size, int litterSize, String fosterDuration, String createdTime, int roleId) {
+    public Listing(long userId, String imageUrl, String name, String type, String breed, String dob, Character gender, String conditions, String description, String size, int litterSize, String fosterDuration, int roleId) {
         this.userId = userId;
         this.imageUrl = imageUrl;
         this.name = name;
@@ -50,7 +50,6 @@ public class Listing {
         this.size = size;
         this.litterSize = litterSize;
         this.fosterDuration = fosterDuration;
-        this.createdTime = createdTime;
         this.roleId = roleId;
     }
 

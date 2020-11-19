@@ -74,6 +74,12 @@ public class MySQLListingsDao implements Listings {
     @Override
     public Long insert(Listing listing) {
         try {
+            java.util.Date dt = new java.util.Date();
+
+            java.text.SimpleDateFormat sdf =
+                    new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+            String currentTime = sdf.format(dt);
             String insertQuery = "INSERT INTO listings (user_id, image_url, name, type, breed, dob, gender, conditions, description, size, litter_size, foster_duration, created_time, role_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, listing.getUserId());
@@ -88,7 +94,7 @@ public class MySQLListingsDao implements Listings {
             stmt.setString(10, listing.getSize());
             stmt.setInt(11, listing.getLitterSize());
             stmt.setString(12, listing.getFosterDuration());
-            stmt.setString(13, listing.getCreatedTime());
+            stmt.setString(13, currentTime);
             stmt.setInt(14, listing.getRoleId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
