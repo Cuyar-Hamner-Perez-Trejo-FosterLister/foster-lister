@@ -6,6 +6,7 @@ public class DaoFactory {
     private static Listings listingsDao;
     private static Users usersDao;
     private static Volunteers volunteersDao;
+    private static Requests requestsDao;
 
     private static Config config = new Config();
 
@@ -28,5 +29,12 @@ public class DaoFactory {
             usersDao = new MySQLUsersDao(config);
         }
         return usersDao;
+    }
+
+    public static Requests getRequestsDao() {
+        if (requestsDao == null) {
+            requestsDao = new MySQLRequestsDao(config);
+        }
+        return requestsDao;
     }
 }
