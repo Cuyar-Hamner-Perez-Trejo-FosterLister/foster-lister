@@ -23,6 +23,7 @@
     <p>${listing.size}</p>
     <p>${listing.createdTime}</p>
 
+
 <jsp:include page="../partials/footer.jsp" />
 <jsp:include page="../partials/bootstrap-script.jsp" />
 </body>

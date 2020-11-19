@@ -13,6 +13,7 @@
     </jsp:include>
 </head>
 <body>
+    <img src="${listing.imageUrl}">
     <h1>${listing.name}</h1>
     <p>${listing.type}</p>
     <p>${listing.breed}</p>

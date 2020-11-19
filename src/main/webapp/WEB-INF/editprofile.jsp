@@ -18,7 +18,7 @@
         <h1>Edit Profile</h1>
         <form action="/update-user" method="POST">
             <div class="form-group">
-                <input id="address" name="address" class="form-control" type="text" value=${user.address}>
+                <textarea id="address" name="address" rows="4" cols="50">${user.address}</textarea>
             </div>
             <div class="form-group">
                 <input id="phone" name="phonenumber" class="form-control" type="text" value=${user.phoneNumber}>

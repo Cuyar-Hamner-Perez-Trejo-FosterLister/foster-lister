@@ -25,8 +25,7 @@
                     <%--href will need to be /admin-dashboard, once we create that servlet and jsp--%>
                     <a class="dropdown-item" href="#">Dashboard</a>
                     <a class="dropdown-item" href="/profile">Profile</a>
-                    <%--href will need to be /about-us, once we create that servlet and jsp--%>
-                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="/update-user">Edit Profile</a>
                     <%--href will need to be /createAdServlet, once we create that servlet and jsp--%>
                     <a class="dropdown-item" href="#">Create Listing</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
