@@ -58,6 +58,8 @@
                         </div>
                         <div class="border-top">
                             <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
+                            <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
+                            <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
                         </div>
                     </div>
                 </div>
