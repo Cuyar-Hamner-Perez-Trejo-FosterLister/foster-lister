@@ -55,7 +55,8 @@ public class MySQLVolunteersDao implements Volunteers {
     @Override
     public Long insert(Volunteer volunteer) {
         try {
-            String insertQuery = "INSERT INTO volunteers (?, ?, ?, ?, ?, ?)";
+
+            String insertQuery = "INSERT INTO volunteers (user_id, date, title, description, contact, image_url) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, volunteer.getUserId());
             stmt.setString(2, volunteer.getDate());
@@ -65,6 +66,7 @@ public class MySQLVolunteersDao implements Volunteers {
             stmt.setString(6, volunteer.getImageUrl());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new volunteer listing", e);
