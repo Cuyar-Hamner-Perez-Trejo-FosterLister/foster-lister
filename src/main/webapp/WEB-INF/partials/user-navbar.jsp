@@ -23,8 +23,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/profile">Profile</a>
-                    <%--href will need to be /about-us, once we create that servlet and jsp--%>
-                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="/update-user">Edit Profile</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
                     <div class="dropdown-divider"></div>
                     <%--href will need to be /about-us, once we create that servlet and jsp--%>
