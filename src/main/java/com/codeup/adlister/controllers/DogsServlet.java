@@ -12,7 +12,7 @@ import java.io.IOException;
 @WebServlet(name="controllers.DogsServlet", urlPatterns = "/dogs")
 public class DogsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("dogs", DaoFactory.getListingsDao().allDogs());
+        request.setAttribute("listings", DaoFactory.getListingsDao().allDogs());
         request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
     }
 }

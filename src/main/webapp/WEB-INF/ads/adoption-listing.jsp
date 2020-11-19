@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: blossomperez
-  Date: 11/18/20
-  Time: 6:32 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,6 +7,20 @@
     </jsp:include>
 </head>
 <body>
+
+    <c:choose>
+        <c:when test = "${sessionScope.user == null}">
+            <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == false}">
+            <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == true}">
+            <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+        </c:when>
+    </c:choose>
+
+    <img src="${listing.imageUrl}">
     <h1>${listing.name}</h1>
     <p>${listing.type}</p>
     <p>${listing.breed}</p>
