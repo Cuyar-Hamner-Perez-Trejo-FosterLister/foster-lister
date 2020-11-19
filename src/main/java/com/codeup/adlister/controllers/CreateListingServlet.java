@@ -44,7 +44,14 @@ public class CreateListingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         String type = (String) request.getSession().getAttribute("choice");
-        long typeID;
+        Character gender = request.getParameter("gender").charAt(0);
+        String name = request.getParameter("name");
+        String strType =  request.getParameter("type");
+        String breed =  request.getParameter("breed");
+        String dob = request.getParameter("dob");
+        String condition = request.getParameter("conditions");
+        String description = request.getParameter("description");
+        String size = request.getParameter("size");
 
         if (type.equals("volunteer")) {
             Volunteer volunteer = new Volunteer(
@@ -56,8 +63,44 @@ public class CreateListingServlet extends HttpServlet {
             );
             DaoFactory.getVolunteersDao().insert(volunteer);
             response.sendRedirect("/ads");
+        } else if (type.equals("foster")){
+            int litterSize = Integer.parseInt(request.getParameter("litter_size"));
+            Listing listing = new Listing(
+                    user.getId(),
+                    "",
+                    name,
+                   strType,
+                   breed,
+                    dob,
+                    gender,
+                    condition,
+                    description,
+                    size,
+                    litterSize,
+                    request.getParameter("foster_duration"),
+                    2
+            );
+            DaoFactory.getListingsDao().insert(listing);
+            response.sendRedirect("/ads");
+        } else if (type.equals("adoption")){
+            Listing listing = new Listing(
+                    user.getId(),
+                    "",
+                    name,
+                    strType,
+                    breed,
+                    dob,
+                    gender,
+                    condition,
+                    description,
+                    size,
+                    0,
+                    "N/A",
+                    1
+            );
+            DaoFactory.getListingsDao().insert(listing);
+            response.sendRedirect("/ads");
         }
-
     }
 
    

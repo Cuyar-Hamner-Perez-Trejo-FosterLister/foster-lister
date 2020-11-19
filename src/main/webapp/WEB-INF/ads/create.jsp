@@ -96,7 +96,7 @@
             <div class="form-group">
                 <label for="conditionsFoster">Special Conditions</label>
                 <br>
-                <textarea name="conditionsFoster" id="conditionsFoster" cols="30" rows="5"></textarea>
+                <textarea name="conditions" id="conditionsFoster" cols="30" rows="5"></textarea>
             </div>
             <div class="form-group">
                 <label for="descriptionFoster">Description</label>
