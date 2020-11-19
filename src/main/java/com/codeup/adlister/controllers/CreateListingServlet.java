@@ -44,14 +44,7 @@ public class CreateListingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         String type = (String) request.getSession().getAttribute("choice");
-        Character gender = request.getParameter("gender").charAt(0);
-        String name = request.getParameter("name");
-        String strType =  request.getParameter("type");
-        String breed =  request.getParameter("breed");
-        String dob = request.getParameter("dob");
-        String condition = request.getParameter("conditions");
-        String description = request.getParameter("description");
-        String size = request.getParameter("size");
+
 
         if (type.equals("volunteer")) {
             Volunteer volunteer = new Volunteer(
@@ -64,6 +57,14 @@ public class CreateListingServlet extends HttpServlet {
             DaoFactory.getVolunteersDao().insert(volunteer);
             response.sendRedirect("/ads");
         } else if (type.equals("foster")){
+            Character gender = request.getParameter("gender").charAt(0);
+            String name = request.getParameter("name");
+            String strType =  request.getParameter("type");
+            String breed =  request.getParameter("breed");
+            String dob = request.getParameter("dob");
+            String condition = request.getParameter("conditions");
+            String description = request.getParameter("description");
+            String size = request.getParameter("size");
             int litterSize = Integer.parseInt(request.getParameter("litter_size"));
             Listing listing = new Listing(
                     user.getId(),
@@ -83,6 +84,14 @@ public class CreateListingServlet extends HttpServlet {
             DaoFactory.getListingsDao().insert(listing);
             response.sendRedirect("/ads");
         } else if (type.equals("adoption")){
+            Character gender = request.getParameter("gender").charAt(0);
+            String name = request.getParameter("name");
+            String strType =  request.getParameter("type");
+            String breed =  request.getParameter("breed");
+            String dob = request.getParameter("dob");
+            String condition = request.getParameter("conditions");
+            String description = request.getParameter("description");
+            String size = request.getParameter("size");
             Listing listing = new Listing(
                     user.getId(),
                     "",
