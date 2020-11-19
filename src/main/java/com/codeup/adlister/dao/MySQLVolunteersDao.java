@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.Config;
+import com.codeup.adlister.models.Listing;
 import com.codeup.adlister.models.Volunteer;
 import com.mysql.cj.jdbc.Driver;
 
@@ -37,16 +38,31 @@ public class MySQLVolunteersDao implements Volunteers {
         }
     }
 
+    public Volunteer searchVolunteer(Long volunteerID) {
+        PreparedStatement stmt = null;
+        try {
+            String query = "SELECT * FROM volunteers WHERE id = ?";
+            stmt = connection.prepareStatement(query);
+            stmt.setLong(1, volunteerID);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractVolunteer(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving listing.", e);
+        }
+    }
+
     @Override
     public Long insert(Volunteer volunteer) {
         try {
-            String insertQuery = "INSERT INTO volunteers (?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO volunteers (?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, volunteer.getUserId());
             stmt.setString(2, volunteer.getDate());
             stmt.setString(3, volunteer.getTitle());
             stmt.setString(4, volunteer.getDescription());
             stmt.setString(5, volunteer.getContact());
+            stmt.setString(6, volunteer.getImageUrl());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             return rs.getLong(1);
@@ -62,7 +78,8 @@ public class MySQLVolunteersDao implements Volunteers {
                 rs.getString("date"),
                 rs.getString("title"),
                 rs.getString("description"),
-                rs.getString("contact")
+                rs.getString("contact"),
+                rs.getString("image_url")
         );
     }
 

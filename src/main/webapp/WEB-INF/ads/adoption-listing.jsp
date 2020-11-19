@@ -20,16 +20,19 @@
         </c:when>
     </c:choose>
 
-    <img src="${listing.imageUrl}">
-    <h1>${listing.name}</h1>
-    <p>${listing.type}</p>
-    <p>${listing.breed}</p>
-    <p>${listing.dob}</p>
-    <p>${listing.gender}</p>
-    <p>${listing.conditions}</p>
-    <p>${listing.description}</p>
-    <p>${listing.size}</p>
-    <p>${listing.createdTime}</p>
+    <div class="container">
+        <img src="${listing.imageUrl}">
+        <h1>${listing.name}</h1>
+        <p>${listing.type}</p>
+        <p>${listing.breed}</p>
+        <p>${listing.dob}</p>
+        <p>${listing.gender}</p>
+        <p>${listing.conditions}</p>
+        <p>${listing.description}</p>
+        <p>${listing.size}</p>
+        <p>${listing.createdTime}</p>
+    </div>
+
 
 
 <jsp:include page="../partials/footer.jsp" />

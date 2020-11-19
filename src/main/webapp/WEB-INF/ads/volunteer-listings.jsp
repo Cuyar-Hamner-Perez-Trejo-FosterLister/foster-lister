@@ -30,7 +30,7 @@
                         <p class="text-center"><small>${volunteer.date}</small></p>
                     </div>
                     <div class="border-top">
-                        <button type="button" class="btn btn-secondary">More Info</button>
+                        <button type="button" class="btn btn-secondary" onclick="sendID(${volunteer.id})">More Info</button>
                     </div>
                 </div>
             </div>
@@ -39,4 +39,7 @@
         <jsp:include page="../partials/footer.jsp" />
         <jsp:include page="../partials/bootstrap-script.jsp" />
     </div>
+    <script>
+        const sendID = (id) => window.location.replace("/volunteer-info?volunteer=" + id);
+    </script>
 </body>
