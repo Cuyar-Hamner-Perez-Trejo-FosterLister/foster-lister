@@ -19,13 +19,12 @@ public class Volunteer {
         this.imageUrl = imageUrl;
     }
 
-    public Volunteer(long userId, String date, String title, String description, String contact, String imageUrl) {
+    public Volunteer(long userId, String date, String title, String description, String contact) {
         this.userId = userId;
         this.date = date;
         this.title = title;
         this.description = description;
         this.contact = contact;
-        this.imageUrl = imageUrl;
     }
 
 
