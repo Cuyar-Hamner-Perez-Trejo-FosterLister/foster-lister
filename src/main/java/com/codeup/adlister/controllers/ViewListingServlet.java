@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Listing;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +14,16 @@ import java.io.IOException;
 public class ViewListingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("listing"));
-        request.setAttribute("name", id);
-        request.setAttribute("listing", DaoFactory.getListingsDao().searchListing(id));
-        request.getRequestDispatcher("/WEB-INF/ads/adoption-listing.jsp").forward(request, response);
+        Listing listing = DaoFactory.getListingsDao().searchListing(id);
+        if(listing.getRoleId() == 1) {
+            request.setAttribute("listing", listing);
+            request.getRequestDispatcher("/WEB-INF/ads/adoption-listing.jsp").forward(request, response);
+        } else {
+            request.setAttribute("listing", listing);
+            request.getRequestDispatcher("/WEB-INF/ads/foster-listing.jsp").forward(request, response);
+        }
+
+
+
     }
 }
