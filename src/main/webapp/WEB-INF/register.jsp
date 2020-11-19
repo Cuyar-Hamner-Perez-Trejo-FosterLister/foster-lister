@@ -17,34 +17,34 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
-                                <input id="firstname" name="firstname" class="form-control" type="text" placeholder="First Name">
+                                <input id="firstname" name="firstname" class="form-control" type="text" placeholder="First Name" required>
                             </div>
                             <div class="form-group col-md-6 mb-3">
-                                <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6 mb-3">
-                                <input id="email" name="email" class="form-control" type="text" placeholder="Email">
-                            </div>
-                            <div class="form-group col-md-6 mb-3">
-                                <input id="phonenumber" name="phonenumber" class="form-control" type="text" placeholder="Phone Number">
+                                <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
-                                <input id="password" name="password" class="form-control" type="password" placeholder="Password">
+                                <input id="email" name="email" class="form-control" type="text" placeholder="Email" required>
                             </div>
                             <div class="form-group col-md-6 mb-3">
-                                <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password">
+                                <input id="phonenumber" name="phonenumber" class="form-control" type="text" placeholder="Phone Number" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
-                                <input id="address" name="address" class="form-control" type="text" placeholder="Address">
+                                <input id="password" name="password" class="form-control" type="password" placeholder="Password" required>
                             </div>
                             <div class="form-group col-md-6 mb-3">
-                                <input id="pets" name="pets" class="form-control" type="text" placeholder="Number of Pets">
+                                <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 mb-3">
+                                <input id="address" name="address" class="form-control" type="text" placeholder="Address" required>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <input id="pets" name="pets" class="form-control" type="text" placeholder="Number of Pets" required>
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary btn-block">
