@@ -18,53 +18,70 @@ import java.io.IOException;
             if(request.getParameter("listing").equals("volunteer")){
                 Long id = Long.parseLong(request.getParameter("id"));
                 Volunteer volunteer =DaoFactory.getVolunteersDao().searchVolunteer(id);
-                request.setAttribute("listing", volunteer);
-                request.setAttribute("choiceEdit", "volunteer");
+                request.getSession().setAttribute("listingEdit", volunteer);
+                request.getSession().setAttribute("choiceEdit", "volunteer");
                 request.getRequestDispatcher("/WEB-INF/ads/edit-listing.jsp").forward(request, response);
             } else {
                 Long id = Long.parseLong(request.getParameter("listing"));
                 Listing listing = DaoFactory.getListingsDao().searchListing(id);
-                request.setAttribute("listing", listing);
+                request.getSession().setAttribute("listingEdit", listing);
                 if (listing.getRoleId() == 1) {
-                    request.setAttribute("choiceEdit", "adoption");
+                    request.getSession().setAttribute("choiceEdit", "adoption");
                 } else {
-                    request.setAttribute("choiceEdit", "foster");
+                    request.getSession().setAttribute("choiceEdit", "foster");
                 }
                 request.getRequestDispatcher("/WEB-INF/ads/edit-listing.jsp").forward(request, response);
             }
         }
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+            String listingType = (String) request.getSession().getAttribute("choiceEdit");
             User user = (User) request.getSession().getAttribute("user");
 
-            String firstname = user.getFirstName();
-            String lastname = user.getLastName();
-            String address = request.getParameter("address");
-            String phonenumber = request.getParameter("phonenumber");
-            int pets = Integer.parseInt(request.getParameter("pets"));
-            String email = user.getEmail();
-//        String imageUrl = request.getParameter("image");
-            String password = request.getParameter("password");
-            String passwordConfirmation = request.getParameter("confirm_password");
-
-            // validate input
-            boolean inputHasErrors = address.isEmpty()
-                    || phonenumber.isEmpty()
-                    || pets < 0
-                    || password.isEmpty()
-                    || (! password.equals(passwordConfirmation));
-
-            if (inputHasErrors) {
-                response.sendRedirect("/update-user");
-                return;
+            switch(listingType){
+                case "volunteer":
+                    Volunteer volunteer = (Volunteer) request.getSession().getAttribute("listingEdit");
+                    String date = request.getParameter("date");
+                    String title = request.getParameter("title");
+                    String descriptionVolunteer = request.getParameter("descriptionVolunteer");
+                    String contact = request.getParameter("contact");
+                    long id = volunteer.getId();
+                    long userId = volunteer.getUserId();
+              Volunteer editVolunteer= new Volunteer(
+                       id,
+                      userId,
+                      date,
+                      title,
+                      descriptionVolunteer,
+                      contact,
+                      ""
+               );
+              DaoFactory.getVolunteersDao().update(editVolunteer);
+              response.sendRedirect("/ads");
+              break;
             }
 
-            // create and edit a current user
-            User editUser = new User(user.getId(), email, password, firstname, lastname, address, phonenumber, pets, "");
-            System.out.println(editUser.getId());
-            DaoFactory.getUsersDao().update(editUser);
-            request.getSession().setAttribute("user", editUser);
-            response.sendRedirect("/ads");
+//            String firstname = user.getFirstName();
+//            String lastname = user.getLastName();
+//            String address = request.getParameter("address");
+//            String phonenumber = request.getParameter("phonenumber");
+//            int pets = Integer.parseInt(request.getParameter("pets"));
+//            String email = user.getEmail();
+////        String imageUrl = request.getParameter("image");
+//            String password = request.getParameter("password");
+//            String passwordConfirmation = request.getParameter("confirm_password");
+//
+//
+//
+//
+//
+//
+//            // create and edit a current user
+//            User editUser = new User(user.getId(), email, password, firstname, lastname, address, phonenumber, pets, "");
+//            System.out.println(editUser.getId());
+//            DaoFactory.getUsersDao().update(editUser);
+//            request.getSession().setAttribute("user", editUser);
+//            response.sendRedirect("/ads");
         }
     }
 

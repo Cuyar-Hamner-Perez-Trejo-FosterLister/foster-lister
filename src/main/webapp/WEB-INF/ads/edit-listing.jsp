@@ -17,7 +17,7 @@
     <form action="/update-listing" method="post">
         <div class="form-group">
             <label for="name">Name of Pet</label>
-            <input id="name" name="name" class="form-control" type="text" value="${listing.name}" required>
+            <input id="name" name="name" class="form-control" type="text" value="${listingEdit.name}" required>
         </div>
 
         <div class="form-group">
@@ -30,11 +30,11 @@
 
         <div class="form-group">
             <label for="breed">Breed</label>
-            <input id="breed" name="breed" class="form-control" type="text" value="${listing.breed}" required>
+            <input id="breed" name="breed" class="form-control" type="text" value="${listingEdit.breed}" required>
         </div>
         <div class="form-group">
             <label for="dob">Estimated Age</label>
-            <input id="dob" name="dob" type="text" class="form-control" value="${listing.dob}" required>
+            <input id="dob" name="dob" type="text" class="form-control" value="${listingEdit.dob}" required>
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
@@ -46,15 +46,15 @@
         <div class="form-group">
             <label for="conditions">Special Conditions</label>
             <br>
-            <textarea name="conditions" id="conditions" cols="30" rows="5">${listing.conditions}</textarea>
+            <textarea name="conditions" id="conditions" cols="30" rows="5">${listingEdit.conditions}</textarea>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text">${listing.description}</textarea>
+            <textarea id="description" name="description" class="form-control" type="text">${listingEdit.description}</textarea>
         </div>
         <div class="form-group">
             <label for="size">Size Description</label>
-            <input id="size" name="size" type="text" value="${listing.size}" required>
+            <input id="size" name="size" type="text" value="${listingEdit.size}" required>
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
@@ -66,7 +66,7 @@
             <form action="/update-listing" method="post">
             <div class="form-group">
                 <label for="name">Name of Pet</label>
-                <input id="nameFoster" name="name" class="form-control" type="text" value="${listing.name}" required>
+                <input id="nameFoster" name="name" class="form-control" type="text" value="${listingEdit.name}" required>
             </div>
 
             <div class="form-group">
@@ -79,11 +79,11 @@
 
             <div class="form-group">
                 <label for="breed">Breed</label>
-                <input id="breed2" name="breed" class="form-control" type="text" value="${listing.breed}" required>
+                <input id="breed2" name="breed" class="form-control" type="text" value="${listingEdit.breed}" required>
             </div>
             <div class="form-group">
                 <label for="dob">Estimated Age</label>
-                <input id="dob2" name="dob" type="text" class="form-control" value="${listing.dob}" required>
+                <input id="dob2" name="dob" type="text" class="form-control" value="${listingEdit.dob}" required>
             </div>
             <div class="form-group">
                 <label for="gender">Gender</label>
@@ -95,23 +95,23 @@
             <div class="form-group">
                 <label for="conditions">Special Conditions</label>
                 <br>
-                <textarea name="conditions" id="conditions2" cols="30" rows="5">${listing.conditions}</textarea>
+                <textarea name="conditions" id="conditions2" cols="30" rows="5">${listingEdit.conditions}</textarea>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description2" name="description" class="form-control" type="text">${listing.description}</textarea>
+                <textarea id="description2" name="description" class="form-control" type="text">${listingEdit.description}</textarea>
             </div>
             <div class="form-group">
                 <label for="sizeFoster">Size Description</label>
-                <input id="sizeFoster" name="size" type="text" value="${listing.size}" required>
+                <input id="sizeFoster" name="size" type="text" value="${listingEdit.size}" required>
             </div>
         <div class="form-group">
             <label for="litter_size">Litter Size (if applicable)</label>
-            <input id="litter_size" name="litter_size" type="text" value="${listing.litterSize}" required>
+            <input id="litter_size" name="litter_size" type="text" value="${listingEdit.litterSize}" required>
         </div>
         <div class="form-group">
             <label for="foster_duration">Estimated Duration of Foster Care</label>
-            <input id="foster_duration" name="foster_duration" type="text" value="${listing.fosterDuration}" required>
+            <input id="foster_duration" name="foster_duration" type="text" value="${listingEdit.fosterDuration}" required>
         </div>
                 <input type="submit" class="btn btn-block btn-primary">
             </form>
@@ -122,19 +122,19 @@
         <form action="/update-listing" method="post">
             <div class="form-group">
                 <label for="date">Date of Volunteer Work</label>
-                <input id="date" name="date" class="form-control" type="text" value="${listing.date}" required>
+                <input id="date" name="date" class="form-control" type="text" value="${listingEdit.date}" required>
             </div>
             <div class="form-group">
                 <label for="title">Volunteer Role Title</label>
-                <input id="title" name="title" type="text" value="${listing.title}" required>
+                <input id="title" name="title" type="text" value="${listingEdit.title}" required>
             </div>
             <div class="form-group">
                 <label for="descriptionVolunteer">Description</label>
-                <textarea id="descriptionVolunteer" name="descriptionVolunteer" class="form-control" type="text">${listing.description}</textarea>
+                <textarea id="descriptionVolunteer" name="descriptionVolunteer" class="form-control" type="text">${listingEdit.description}</textarea>
             </div>
             <div class="form-group">
                 <label for="contact">Contact Information</label>
-                <input id="contact" name="contact" type="text" value="${listing.contact}" required>
+                <input id="contact" name="contact" type="text" value="${listingEdit.contact}" required>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
