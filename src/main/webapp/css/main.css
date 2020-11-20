@@ -5,13 +5,17 @@
     --darkteal: #2B5876;
     /*For Backgrounds*/
     --darkgrey: #121212;
-    --containergrey: #2B2B2B;
+    --containergrey: #2b2b2b;
     --filtergrey: #737272;
     /*For Text*/
-    --hoverblue: #30BDF4;
-    --activeblue: #30BDF4;
+    --hoverblue: #30bdf4;
+    --activepurple: #4e4376;
     --textwhite: #e0d7d7;
     --iconpurple: #A0A3BD;
+}
+
+.gradient {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(159, 165, 73) 0%, rgb(76, 102, 76) 90% );
 }
 
 body {
@@ -19,10 +23,92 @@ body {
     color: var(--textwhite);
 }
 
-#pet-index-listing, #volunteer-index-listing, #index-listing, #volunteer-listing {
+nav {
+    background-color: var(--containergrey)
+}
+
+nav a {
+    color: var(--textwhite);
+}
+
+a:hover {
+    color: var(--hoverblue) !important;
+}
+
+a:active {
+    color: var(--activepurple) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(78,67,118, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(48,189,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.jumbotron {
+
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ),
+    url("/images/pexels-snapwire-46024.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#pet-index-listing {
+    position: relative;
+}
+
+#volunteer-index-listing, #index-listing, #volunteer-listing {
     display: flex;
 }
 
 .index-card {
-    width: 200px;
+    border-radius: 25px;
+    width: 150px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px;
+    height: 350px;
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.8)
+}
+
+.listing-img {
+    border-radius: 25px 25px 0 0;
+    height: 200px;
+    width: 100%
+}
+
+.text-container {
+    padding: 5px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: -15px;
+    left: 43px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .button-container {
+        position: absolute;
+        bottom: -15px;
+        left: 90px;
+    }
+
+
+}
+
+@media only screen and (min-width: 992px) {
+    .button-container {
+        position: absolute;
+        bottom: -15px;
+        left: 43px;
+    }
+
 }
