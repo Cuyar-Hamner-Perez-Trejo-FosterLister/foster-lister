@@ -14,6 +14,11 @@ import java.io.IOException;
 @WebServlet(name = "DeleteListingServlet", urlPatterns = "/delete-listing")
 public class DeleteListingServlet extends HttpServlet{
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
         if(request.getParameter("listing").equals("volunteer")) {
             long id = Long.parseLong(request.getParameter("id"));
             DaoFactory.getVolunteersDao().destroyVolunteer(id);
