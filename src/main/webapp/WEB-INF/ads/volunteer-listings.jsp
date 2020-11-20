@@ -29,16 +29,14 @@
                         <h4 class="text-center">${volunteer.title}</h4>
                         <p class="text-center"><small>${volunteer.date}</small></p>
                     </div>
-                    <div class="border-top">
-                        <button type="button" class="btn btn-secondary" onclick="sendID(${volunteer.id})">More Info</button>
-                        <br>
-                        <c:choose>
-                            <c:when test="${sessionScope.user.admin == true}">
-                                <a href="/update-listing?listing=volunteer&id=${volunteer.id}">Edit Listing</a>
+                    <c:choose>
+                        <c:when test="${sessionScope.user.admin == true}">
+                             <div class="border-top">
+                                <a href="/update-listing?listing=volunteer&id=${volunteer.id}}">Edit Listing</a>
                                 <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete Listing</a>
-                            </c:when>
-                        </c:choose>
-                    </div>
+                            </div>
+                        </c:when>
+                    </c:choose>
                 </div>
             </div>
         </c:forEach>
