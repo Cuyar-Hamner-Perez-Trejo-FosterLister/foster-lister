@@ -4,15 +4,15 @@ Users: 	Admin (Shelter Staff)
 
 User Stories:
 - As an admin, I would expect to be able to see data displayed on the website. (Admin Dashboard)
-- As an admin, I would like to be able to add, delete, and edit a foster/adopt/volunteer listing.
-- Only admins (shelter staff) can post foster/adopt/volunteer listings.
+X As an admin, I would like to be able to add, delete, and edit a foster/adopt/volunteer listing.
+X Only admins (shelter staff) can post foster/adopt/volunteer listings.
 - As an admin, be able to delete users if necessary by going to their profile page.
-- As an admin, I expect to view users' profiles.
-- As an admin, profile will already be created, no need to fill out a registration form.
+- As an admin, I expect to view users' profiles. (nice to have)
+X As an admin, profile will already be created, no need to fill out a registration form. (Admin creates Admins)
     * Information is already set by organization.
 
 X As a guest, I expect to see foster/adopt/volunteer listings.
-_ As a guest, I expect to be redirected to the general registration page
+X As a guest, I expect to be redirected to the general registration page
 (create an account) when I click on a button that says "I'm interested in ..." (Check for Session in jsp)
 X As a guest, I expect to be able to register to for an account.
 
@@ -26,8 +26,8 @@ X As a user, I expect to be able to filter dogs and cats.
 - As a user, I expect to be able to filter breeds. (Filter)
 - As a user, I expect to be able to filter age. (Filter)
 - As a user, I expect to be able to filter gender. (Filter)
-- As a user, I expect to be able to request to adopt/foster/volunteer.
-- As a user, I expect to get confirmation after the request was sent.
+X As a user, I expect to be able to request to adopt/foster/volunteer.
+X As a user, I expect to get confirmation after the request was sent.
 X As a user, I don't have access to view other users' profiles.
 
 Features:
@@ -59,7 +59,7 @@ X Dynamic NavBar
     * Change password (nice to have)
     * Delete Account button
     * Foster/Adopter/Volunteer badges (nice to have)
-- Admin Dashboard
+X Admin Dashboard
     * Admin Profile
             - Edit button
             - Avatar (Photo)
@@ -102,25 +102,25 @@ X Dynamic NavBar
             + Listing Title
             + Delete Button (Warning)
             + Edit Button   (Redirects to listing's edit page/modal)
-- Button that says "I'm Interested in (Volunteering/Adopting/Fostering" and sends a request to the admin.
+X Button that says "I'm Interested in (Volunteering/Adopting/Fostering" and sends a request to the admin.
 - Filter the listings (categories)
 - "About Us" page for the Shelter/Organization
-- Thank you page after a request has been sent.
+X Thank you page after a request has been sent.
     * "Thank you for sending a request"
     * Application ID
     * Expected wait time
     * Email if they have any questions.
-- Error messages for general registration
-- Sticky forms
+X Error messages for general registration
+X Sticky forms
     * When a submission is rejected because one or more of our validation constraints fails,
     we should still see the old values in the form for creating an ad, the users' input should not be erased.
-- Delete and Edit/Save button on individual listings. Warning message for delete. (confirmation)
-- Edit Listing Modal/Page
+X Delete and Edit/Save button on individual listings. Warning message for delete. (confirmation)
+X Edit Listing Modal/Page
 
 
 
 Nice to have:
-- Admins have the ability to add a user.
+X Admins have the ability to add a user.
 - Notifications that alert the fosters of new listings
 - Donations / Discussion Feed (?)
 - Certification of fosters/adopters/volunteers
