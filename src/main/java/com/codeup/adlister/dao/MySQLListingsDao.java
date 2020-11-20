@@ -38,7 +38,7 @@ public class MySQLListingsDao implements Listings {
     public List<Listing> fourMostRecent() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM listings ORDER BY created_time LIMIT 4");
+            stmt = connection.prepareStatement("SELECT * FROM listings ORDER BY id DESC LIMIT 4");
             ResultSet rs = stmt.executeQuery();
             return createListingsFromResults(rs);
         } catch (SQLException e) {
