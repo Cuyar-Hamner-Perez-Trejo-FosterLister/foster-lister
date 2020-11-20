@@ -35,6 +35,17 @@ public class MySQLListingsDao implements Listings {
         }
     }
 
+    public List<Listing> fourMostRecent() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM listings ORDER BY created_time LIMIT 4");
+            ResultSet rs = stmt.executeQuery();
+            return createListingsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving listings");
+        }
+    }
+
     public List<Listing> allDogs() {
         PreparedStatement stmt = null;
         try {

@@ -8,6 +8,9 @@ public interface Listings {
     // get a list of all the ads
     List<Listing> all();
 
+    // get four most recent listings
+    List<Listing> fourMostRecent();
+
     // get a list of all dog listings
     List<Listing> allDogs();
 
