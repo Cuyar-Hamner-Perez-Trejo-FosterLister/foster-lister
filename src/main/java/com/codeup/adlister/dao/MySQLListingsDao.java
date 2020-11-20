@@ -104,7 +104,8 @@ public class MySQLListingsDao implements Listings {
             throw new RuntimeException("Error creating a new listing.", e);
         }
     }
-    private void update(Listing listing){
+    @Override
+    public void update(Listing listing){
         String query = "UPDATE listings SET name = ?, type = ?, breed = ?, dob = ?, gender = ?, conditions = ?, description = ?, size = ?, litter_size = ?, foster_duration = ?, role_id = ? WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
