@@ -73,8 +73,7 @@ public class MySQLUsersDao implements Users {
             stmt.setString(8, user.getImgURL());
             stmt.setLong(9, user.getId());
             stmt.execute();
-//            ResultSet rs = stmt.getGeneratedKeys();
-//            rs.next();
+
         } catch (SQLException e){
             System.out.println(e.getErrorCode());
             System.out.println(e.getSQLState());
