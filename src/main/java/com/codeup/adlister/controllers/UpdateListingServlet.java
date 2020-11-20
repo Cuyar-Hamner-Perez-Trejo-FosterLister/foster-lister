@@ -75,7 +75,7 @@ import java.io.IOException;
                     editListing = new Listing(
                             listing.getId(),
                             listing.getUserId(),
-                            "",
+                            listing.getImageUrl(),
                             name,
                             type,
                             breed,
@@ -93,7 +93,7 @@ import java.io.IOException;
                         editListing = new Listing(
                                 listing.getId(),
                                 listing.getUserId(),
-                                "",
+                                listing.getImageUrl(),
                                 name,
                                 type,
                                 breed,

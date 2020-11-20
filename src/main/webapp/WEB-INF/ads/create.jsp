@@ -29,11 +29,19 @@
                 <input id="name" name="name" class="form-control" type="text" required>
             </div>
             <div class="form-group">
-                <label for="type"></label>
-                <select name="type" id="type">
+                <label for="type">Animal Type</label>
+                <select name="type" id="type" onchange="set()" required>
+                    <option></option>
                     <option value="Cat">Cat</option>
                     <option value="Dog">Dog</option>
                 </select>
+            </div>
+            <div id="image-display" class="form-group d-none">
+                <img src="" alt="Example Image" id="change-image">
+                <button type="button" id="button-image" onclick="set()">Change Image</button>
+                <br>
+                <label for="imageUrl">Image URL</label>
+                <input type="text" id="imageUrl" name="imageUrl" class="form-control" readonly>
             </div>
             <div class="form-group">
                 <label for="breed">Breed</label>
@@ -45,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="gender">Gender</label>
-                <select name="gender" id="gender">
+                <select name="gender" id="gender" required>
                     <option value="F">F</option>
                     <option value="M">M</option>
                 </select>
@@ -73,11 +81,19 @@
                 <input id="nameFoster" name="name" class="form-control" type="text" required>
             </div>
             <div class="form-group">
-                <label for="typeFoster"></label>
-                <select name="type" id="typeFoster">
+                <label for="typeFoster">Animal Type</label>
+                <select name="type" id="typeFoster" onchange="set()" required>
+                    <option></option>
                     <option value="Cat">Cat</option>
                     <option value="Dog">Dog</option>
                 </select>
+            </div>
+            <div id="image-displayF" class="form-group d-none">
+                <img src="" alt="Example Image" id="change-imageF">
+                <button type="button" id="button-imageF" onclick="set()">Change Image</button>
+                <br>
+                <label for="imageUrlF">Image URL</label>
+                <input type="text" id="imageUrlF" name="imageUrl" class="form-control" readonly>
             </div>
             <div class="form-group">
                 <label for="breedFoster">Breed</label>
@@ -141,6 +157,8 @@
     </c:when>
 </c:choose>
     </div>
+    <jsp:include page="/WEB-INF/partials/jquery-script.jsp" />
+
     <script>
         const change = value => window.location.assign("/listings/create?choice=" + value);
     </script>
