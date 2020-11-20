@@ -8,7 +8,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
 
 <c:choose>
     <c:when test="${choiceEdit == 'adoption'}">
