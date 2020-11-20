@@ -13,7 +13,7 @@ import java.io.IOException;
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("listings", DaoFactory.getListingsDao().fourMostRecent());
-        request.setAttribute("volunteers", DaoFactory.getVolunteersDao().all());
+        request.setAttribute("volunteers", DaoFactory.getVolunteersDao().fourMostRecentVolunteer());
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }
