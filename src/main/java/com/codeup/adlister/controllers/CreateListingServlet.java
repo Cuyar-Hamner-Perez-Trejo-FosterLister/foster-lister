@@ -66,12 +66,14 @@ public class CreateListingServlet extends HttpServlet {
             String condition = request.getParameter("conditions");
             String description = request.getParameter("description");
             String size = request.getParameter("size");
+            String imgUrl = request.getParameter("imageUrl");
+
             if (type.equals("foster")) {
                 int litterSize = Integer.parseInt(request.getParameter("litter_size"));
                 String fosterDuration = request.getParameter("foster_duration");
                 insertListing = new Listing(
                         user.getId(),
-                        "",
+                        imgUrl,
                         name,
                         strType,
                         breed,
@@ -87,7 +89,7 @@ public class CreateListingServlet extends HttpServlet {
             } else {
                 insertListing = new Listing(
                         user.getId(),
-                        "",
+                        imgUrl,
                         name,
                         strType,
                         breed,
