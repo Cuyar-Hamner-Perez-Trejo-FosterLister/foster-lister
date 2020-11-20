@@ -36,7 +36,6 @@ import java.io.IOException;
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
             String listingType = (String) request.getSession().getAttribute("choiceEdit");
-            User user = (User) request.getSession().getAttribute("user");
             Listing editListing;
 
 
@@ -90,8 +89,6 @@ import java.io.IOException;
                             listing.getCreatedTime(),
                             listing.getRoleId()
                     );
-                    DaoFactory.getListingsDao().update(editListing);
-                        response.sendRedirect("/ads");
                     } else {
                         editListing = new Listing(
                                 listing.getId(),
@@ -110,9 +107,9 @@ import java.io.IOException;
                                 listing.getCreatedTime(),
                                 listing.getRoleId()
                         );
-                        DaoFactory.getListingsDao().update(editListing);
-                        response.sendRedirect("/ads");
                     }
+               DaoFactory.getListingsDao().update(editListing);
+               response.sendRedirect("/ads");
 
            }
 
