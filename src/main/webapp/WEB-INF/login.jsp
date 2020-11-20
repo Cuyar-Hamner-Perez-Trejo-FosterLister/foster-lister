@@ -19,7 +19,15 @@
         </c:when>
     </c:choose>
     <div class="container">
-        <h1>Login</h1>
+        <c:choose>
+            <c:when test = "${}">
+                <h1>Login</h1>
+                <p>Invalid Email or Password. Please try again.</p>
+            </c:when>
+            <c:otherwise>
+                <h1>Login</h1>
+            </c:otherwise>
+        </c:choose>
         <form action="/login" method="POST">
             <div class="form-group">
                 <input id="email" name="email" class="form-control" type="text" placeholder="email">
