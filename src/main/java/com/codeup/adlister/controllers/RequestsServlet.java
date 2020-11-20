@@ -14,6 +14,11 @@ import java.util.Date;
 @WebServlet(name = "RequestsServlet", urlPatterns = "/requests")
 public class RequestsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
         Long listingId = Long.parseLong(request.getParameter("listing"));
         User user = (User) request.getSession().getAttribute("user");
         Long userId = user.getId();
