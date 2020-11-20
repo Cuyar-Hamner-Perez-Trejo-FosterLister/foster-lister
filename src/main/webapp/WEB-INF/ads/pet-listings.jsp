@@ -28,10 +28,10 @@
                 <div class="card-body">
                     <c:choose>
                         <c:when test="${viewListingType == 'dogs'}">
-                            <h1>Filter Dogs</h1>
+                            <h1 id="listing-type" data-endpoint="dogs">Filter Dogs</h1>
                         </c:when>
                         <c:when test="${viewListingType == 'cats'}">
-                            <h1>Filter Cats</h1>
+                            <h1 id="listing-type" data-endpoint="cats">Filter Cats</h1>
                         </c:when>
                     </c:choose>
 
@@ -42,9 +42,10 @@
 <%--                                <span class="input-group-text" id="search-button">@</span>--%>
 <%--                            </div>--%>
 <%--                        </div>--%>
+
                         <div class="form-group">
                             <label class="d-none" for="foster-or-adoption">Foster or Adoption</label>
-                            <select class="form-control" id="foster-or-adoption">
+                            <select class="form-control" id="foster-or-adoption" name="choiceFA" onChange = "change(this.options[this.selectedIndex].value)">
                                 <option selected>Foster or Adoption</option>
                                 <option value="foster">Foster</option>
                                 <option value="adoption">Adoption</option>
@@ -52,7 +53,7 @@
                         </div>
                         <div class="form-group">
                             <label class="d-none" for="breed">Breed</label>
-                            <select class="form-control" id="breed">
+                            <select class="form-control" id="breed" name= "choiceB">
                                 <option selected>Breed</option>
                                 <c:forEach var="listing" items="${listings}">
                                     <option value="${listing.breed}">${listing.breed}</option>
@@ -61,7 +62,7 @@
                         </div>
                         <div class="form-group">
                             <label class="d-none" for="gender">Gender</label>
-                            <select class="form-control" id="gender">
+                            <select class="form-control" id="gender" name="choiceG">
                                 <option selected>Gender</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -103,6 +104,15 @@
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 
     <script>
+        // let endpoint = document.querySelector('#listing-type');
+        let endpoint = '/dogs'
+        let query = '?choiceFA='
+        //     jQuery.param({
+        //     choiceFA: null,
+        //     choiceB: null,
+        //     choiceG: null
+        // });
+        const change = (params) => window.location.assign(endpoint + query + params);
         const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
     </script>
 
