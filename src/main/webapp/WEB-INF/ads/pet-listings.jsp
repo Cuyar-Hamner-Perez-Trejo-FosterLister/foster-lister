@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alexandra
-  Date: 11/17/20
-  Time: 11:05 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -57,7 +50,14 @@
                             <p class="text-center">${listing.dob} • ${listing.breed}</p>
                         </div>
                         <div class="border-top">
-                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
+                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button
+                            <br>
+                            <c:choose>
+                                <c:when test="${sessionScope.user.admin == true}">
+                                    <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
+                                    <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
+                                </c:when>
+                            </c:choose>
                         </div>
                     </div>
                 </div>

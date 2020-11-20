@@ -66,6 +66,18 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+    public User(String email, String password, String firstName, String lastName, String address, String phoneNumber, int numberOfPets, String imgURL, boolean isAdmin) {
+        this.email = email;
+        setPassword(password);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this. numberOfPets = numberOfPets;
+        this.imgURL = imgURL;
+        this.isAdmin = isAdmin;
+    }
+
     public long getId() {
         return id;
     }
