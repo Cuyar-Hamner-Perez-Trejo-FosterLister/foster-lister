@@ -1,3 +1,24 @@
+:root {
+    /*For Gradient*/
+    --darkpurple: #4E4376;
+    --gradiantteal: #3B4E76;
+    --darkteal: #2B5876;
+    /*For Backgrounds*/
+    --darkgrey: #121212;
+    --containergrey: #2B2B2B;
+    --filtergrey: #737272;
+    /*For Text*/
+    --hoverblue: #30BDF4;
+    --activeblue: #30BDF4;
+    --textwhite: #e0d7d7;
+    --iconpurple: #A0A3BD;
+}
+
+body {
+    background-color: var(--darkgrey);
+    color: var(--textwhite);
+}
+
 #pet-index-listing, #volunteer-index-listing, #index-listing, #volunteer-listing {
     display: flex;
 }

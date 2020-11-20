@@ -34,7 +34,7 @@
         <c:forEach var="listing" items="${listings}" begin="0" end="3">
             <div class="">
                 <div class="index-card border mx-3">
-                    <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                    <img src="${listing.imageUrl}" style="height: 200px; width: 200px">
                     <div class="">
                         <p class="text-center">${listing.name}</p>
                         <p class="text-center">${listing.dob} • ${listing.breed}</p>
