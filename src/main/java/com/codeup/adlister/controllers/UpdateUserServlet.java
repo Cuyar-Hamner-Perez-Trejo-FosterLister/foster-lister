@@ -17,7 +17,6 @@ import java.io.IOException;
 
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
             User user = (User) request.getSession().getAttribute("user");
-
             String firstname = user.getFirstName();
             String lastname = user.getLastName();
             String address = request.getParameter("address");
@@ -42,7 +41,6 @@ import java.io.IOException;
 
             // create and edit a current user
             User editUser = new User(user.getId(), email, password, firstname, lastname, address, phonenumber, pets, "");
-            System.out.println(editUser.getId());
             DaoFactory.getUsersDao().update(editUser);
             request.getSession().setAttribute("user", editUser);
             response.sendRedirect("/ads");

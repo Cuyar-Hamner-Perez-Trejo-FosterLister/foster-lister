@@ -12,5 +12,9 @@ public interface Volunteers {
     //search for one listing and return it
     Volunteer searchVolunteer(Long volunteerID);
 
+
+    void update(Volunteer volunteer);
+
     void destroyVolunteer(long id);
+
 }
