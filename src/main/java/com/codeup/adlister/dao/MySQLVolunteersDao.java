@@ -37,6 +37,17 @@ public class MySQLVolunteersDao implements Volunteers {
             throw new RuntimeException("Error retrieving all volunteer ads");
         }
     }
+
+    public List<Volunteer> fourMostRecentVolunteer() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM volunteers ORDER BY id DESC LIMIT 4;");
+            ResultSet rs = stmt.executeQuery();
+            return createVolunteerFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving listings");
+        }
+    }
     
     public Volunteer searchVolunteer(Long volunteerID) {
         PreparedStatement stmt = null;
