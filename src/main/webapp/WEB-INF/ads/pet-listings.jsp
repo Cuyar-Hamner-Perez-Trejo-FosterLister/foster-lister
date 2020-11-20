@@ -19,6 +19,7 @@
             <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
         </c:when>
     </c:choose>
+<%--    <c:set var="listings" scope ="session" value ="${listings}"/>--%>
 
     <div class="container">
         <!--Filter Container -->
