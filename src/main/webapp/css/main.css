@@ -1,4 +1,4 @@
-#index-listing, #volunteer-listing {
+#pet-index-listing, #volunteer-index-listing, #index-listing, #volunteer-listing {
     display: flex;
 }
 

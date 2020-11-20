@@ -67,14 +67,6 @@
                                 <option value="F">Female</option>
                             </select>
                         </div>
-<%--                        <div class="form-group">--%>
-<%--                            <label for="litter-size">Litter Size</label>--%>
-<%--                            <select class="form-control" id="litter-size">--%>
-<%--                                <c:forEach var="listing" items="${listings}">--%>
-<%--                                    <option value="${listing.litter_size}">${listing.litter_size}</option>--%>
-<%--                                </c:forEach>--%>
-<%--                            </select>--%>
-<%--                        </div>--%>
                     </form>
                 </div>
             </div>
@@ -90,7 +82,7 @@
                             <p class="text-center">${listing.dob} • ${listing.breed}</p>
                         </div>
                         <div class="border-top">
-                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button
+                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
                             <br>
                             <c:choose>
                                 <c:when test="${sessionScope.user.admin == true}">
