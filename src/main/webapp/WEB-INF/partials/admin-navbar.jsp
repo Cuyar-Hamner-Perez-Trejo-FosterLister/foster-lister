@@ -30,7 +30,7 @@
                     <div class="dropdown-divider"></div>
                     <%--href will need to be /about-us, once we create that servlet and jsp--%>
                     <a class="dropdown-item" href="#">About Us</a>
-                    <a class="dropdown-item" href="#">FAQ</a>
+                    <a class="dropdown-item" href="/faq">FAQ</a>
                 </div>
             </li>
         </ul>
