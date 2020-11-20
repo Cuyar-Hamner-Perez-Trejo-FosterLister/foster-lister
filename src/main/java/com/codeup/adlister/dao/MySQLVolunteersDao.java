@@ -73,6 +73,17 @@ public class MySQLVolunteersDao implements Volunteers {
         }
     }
 
+    public void destroyVolunteer(long id) {
+        String query = "DELETE FROM volunteers WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            stmt.execute();
+        } catch (SQLException e){
+            throw new RuntimeException("Error deleting volunteer listing");
+        }
+    }
+
     private Volunteer extractVolunteer(ResultSet rs) throws SQLException {
         return new Volunteer(
                 rs.getLong("id"),

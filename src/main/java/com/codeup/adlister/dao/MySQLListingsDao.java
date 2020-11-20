@@ -105,6 +105,18 @@ public class MySQLListingsDao implements Listings {
         }
     }
 
+    @Override
+    public void destroyListing(long id) {
+        String query = "DELETE FROM listings WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting listing");
+        }
+    }
+
     private Listing extractListing(ResultSet rs) throws SQLException {
         return new Listing(
             rs.getLong("id"),
