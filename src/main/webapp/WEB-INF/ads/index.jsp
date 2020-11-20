@@ -37,6 +37,13 @@
                     </div>
                     <div class="border-top">
                         <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
+                        <br>
+                        <c:choose>
+                            <c:when test="${sessionScope.user.admin == true}">
+                                <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
+                                <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
+                            </c:when>
+                        </c:choose>
                     </div>
                 </div>
             </div>

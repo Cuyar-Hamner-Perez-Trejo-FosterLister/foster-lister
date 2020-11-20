@@ -7,6 +7,19 @@
     </jsp:include>
 </head>
 <body>
+
+    <c:choose>
+        <c:when test = "${sessionScope.user == null}">
+            <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == false}">
+            <jsp:include page="/WEB-INF/partials/user-navbar.jsp" />
+        </c:when>
+        <c:when test = "${sessionScope.user.admin == true}">
+            <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+        </c:when>
+    </c:choose>
+
     <div class="container">
         <h1>Welcome, ${sessionScope.user.firstName}!</h1>
         <p>${user.email}</p

@@ -48,7 +48,7 @@ public class MySQLUsersDao implements Users {
             stmt.setInt(6, user.getNumberOfPets());
             stmt.setString(7, user.getPhoneNumber());
             stmt.setString(8, user.getImgURL());
-            stmt.setBoolean(9, false);
+            stmt.setBoolean(9, user.isAdmin());
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
