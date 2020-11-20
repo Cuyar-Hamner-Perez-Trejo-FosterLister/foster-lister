@@ -27,7 +27,7 @@ public class MySQLVolunteersDao implements Volunteers {
     }
 
     @Override
-    public  List<Volunteer> all() {
+    public List<Volunteer> all() {
         PreparedStatement stmt = null;
         try {
             stmt = connection.prepareStatement("SELECT * FROM volunteers");
