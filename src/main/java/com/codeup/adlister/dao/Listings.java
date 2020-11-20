@@ -21,4 +21,7 @@ public interface Listings {
     Long insert(Listing listing);
 
     void update(Listing listing);
+
+    void destroyListing(long id);
+
 }

@@ -17,6 +17,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User admin = (User) request.getSession().getAttribute("user");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String address = request.getParameter("address");
@@ -26,6 +27,15 @@ public class RegisterServlet extends HttpServlet {
 //        String imageUrl = request.getParameter("image");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        String isAdminString = request.getParameter("is-admin");
+
+        boolean isAdmin;
+
+        if(isAdminString.equals("true")) {
+            isAdmin = true;
+        } else {
+            isAdmin = false;
+        }
 
         // validate input
         boolean inputHasErrors = firstname.isEmpty()
@@ -42,9 +52,16 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
+        if (admin.isAdmin()){
+            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "", isAdmin);
+            DaoFactory.getUsersDao().insert(user);
+            response.sendRedirect("/profile");
+        } else {
+            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "", false);
+            DaoFactory.getUsersDao().insert(user);
+            response.sendRedirect("/login");
+        }
         // create and save a new user
-        User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "");
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
+
     }
 }

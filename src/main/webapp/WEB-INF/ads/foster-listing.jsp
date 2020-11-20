@@ -62,7 +62,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Request</button>
-                    <button type="button" class="btn btn-primary" onclick="">Send Request</button>
+                    <button type="button" class="btn btn-primary" onclick="makeRequest(${listing.id})">Send Request</button>
                 </div>
             </div>
         </div>
@@ -72,6 +72,7 @@
 
     <script>
         const redirect = () => window.location.replace("/register");
+        const makeRequest = (id) => window.location.replace("/requests?listing=" + id)
     </script>
 </body>
 </html>
