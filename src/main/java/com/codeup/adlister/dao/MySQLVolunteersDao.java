@@ -37,7 +37,7 @@ public class MySQLVolunteersDao implements Volunteers {
             throw new RuntimeException("Error retrieving all volunteer ads");
         }
     }
-
+    
     public Volunteer searchVolunteer(Long volunteerID) {
         PreparedStatement stmt = null;
         try {
@@ -72,7 +72,22 @@ public class MySQLVolunteersDao implements Volunteers {
             throw new RuntimeException("Error creating a new volunteer listing", e);
         }
     }
-
+    @Override
+    public void update(Volunteer volunteer){
+        String query = "UPDATE volunteers SET date = ?, title = ?, description = ?, contact = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, volunteer.getDate());
+            stmt.setString(2, volunteer.getTitle());
+            stmt.setString(3, volunteer.getDescription());
+            stmt.setString(4, volunteer.getContact());
+            stmt.setLong(5,volunteer.getId());
+            stmt.execute();
+        } catch(SQLException e) {
+            throw new RuntimeException("Error updating volunteer listing", e);
+        }
+    }
+    @Override
     public void destroyVolunteer(long id) {
         String query = "DELETE FROM volunteers WHERE id = ?";
         try {
@@ -83,6 +98,7 @@ public class MySQLVolunteersDao implements Volunteers {
             throw new RuntimeException("Error deleting volunteer listing");
         }
     }
+
 
     private Volunteer extractVolunteer(ResultSet rs) throws SQLException {
         return new Volunteer(

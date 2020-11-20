@@ -7,6 +7,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
+    <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
     <div class="container">
         <h1>Create a new Listing</h1>
         <div>

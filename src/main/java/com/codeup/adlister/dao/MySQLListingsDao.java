@@ -104,6 +104,30 @@ public class MySQLListingsDao implements Listings {
             throw new RuntimeException("Error creating a new listing.", e);
         }
     }
+    @Override
+    public void update(Listing listing){
+        String query = "UPDATE listings SET name = ?, type = ?, breed = ?, dob = ?, gender = ?, conditions = ?, description = ?, size = ?, litter_size = ?, foster_duration = ?, role_id = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, listing.getName());
+            stmt.setString(2, listing.getType());
+            stmt.setString(3, listing.getBreed());
+            stmt.setString(4, listing.getDob());
+            stmt.setString(5, listing.getGender().toString());
+            stmt.setString(6,listing.getConditions());
+            stmt.setString(7, listing.getDescription());
+            stmt.setString(8, listing.getSize());
+            stmt.setInt(9, listing.getLitterSize());
+            stmt.setString(10, listing.getFosterDuration());
+            stmt.setInt(11, listing.getRoleId());
+            stmt.setLong(12, listing.getId());
+            stmt.execute();
+        } catch(SQLException e){
+            throw new RuntimeException("Error updating listing", e);
+        }
+
+
+    }
 
     @Override
     public void destroyListing(long id) {
@@ -116,6 +140,7 @@ public class MySQLListingsDao implements Listings {
             throw new RuntimeException("Error deleting listing");
         }
     }
+
 
     private Listing extractListing(ResultSet rs) throws SQLException {
         return new Listing(
