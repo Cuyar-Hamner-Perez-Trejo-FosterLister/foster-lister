@@ -34,7 +34,7 @@
                         <br>
                         <c:choose>
                             <c:when test="${sessionScope.user.admin == true}">
-                                <a href="/update-listing?listing=volunteer&id=${volunteer.id}}">Edit Listing</a>
+                                <a href="/update-listing?listing=volunteer&id=${volunteer.id}">Edit Listing</a>
                                 <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete Listing</a>
                             </c:when>
                         </c:choose>
