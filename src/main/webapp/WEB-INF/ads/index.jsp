@@ -30,14 +30,14 @@
     </div>
 
     <div class="container">
-        <div class="container">
-            <h2>Available Pets</h2>
+        <div>
+            <h2 class="mt-4 lg-font">Available Pets</h2>
         </div>
 
         <div id="pet-index-listing">
             <div class="row w-100 justify-content-center">
             <c:forEach var="listing" items="${listings}" begin="0" end="3">
-                    <div class="index-card gradient col-5 col-md-5 col-lg-2">
+                    <div class="index-card gradient col-5 col-md-5 col-lg-2" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
                         <img class="listing-img" src="${listing.imageUrl}" style="height: 200px; width: 100%">
                         <div class="text-container">
                             <h5 class="text-center">${listing.name}</h5>
@@ -61,7 +61,7 @@
 
 
         <div class="container">
-            <h2>Volunteer Opportunities</h2>
+            <h2 class="lg-font">Volunteer Opportunities</h2>
         </div>
 
         <div id="volunteer-index-listing">

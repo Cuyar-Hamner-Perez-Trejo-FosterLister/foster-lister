@@ -12,11 +12,17 @@
     --activepurple: #4e4376;
     --textwhite: #e0d7d7;
     --iconpurple: #A0A3BD;
+
+    --dark-boxshadow: 5px 5px 15px -1px rgba(0,0,0,0.8);
+    --light-boxshadow: 5px 5px 15px -1px rgba(57, 55, 55, 0.8);
 }
 
 .gradient {
-    background: rgb(78,67,118);
     background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);
+}
+
+.lg-font {
+    font-size: 40px;
 }
 
 body {
@@ -43,9 +49,11 @@ a:active {
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(78,67,118, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
 .navbar-toggler-icon:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(48,189,244, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
 .jumbotron {
 
     background: linear-gradient(
@@ -59,11 +67,13 @@ a:active {
     background-size: cover;
 }
 
-#pet-index-listing {
+#pet-index-listing, #volunteer-index-listing {
+    margin-top: 50px;
+    margin-bottom: 50px;
     position: relative;
 }
 
-#volunteer-index-listing, #index-listing, #volunteer-listing {
+#index-listing, #volunteer-listing {
     display: flex;
 }
 
@@ -74,7 +84,8 @@ a:active {
     padding-right: 0;
     margin: 10px;
     height: 350px;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.8);
+    box-shadow: var(--dark-boxshadow);
+    background: #4E4376;
 }
 
 .listing-img {
@@ -93,6 +104,29 @@ a:active {
     left: 43px;
 }
 
+.registration-card {
+    margin-top: 50px;
+    box-shadow: var(--dark-boxshadow);
+    border-radius: 25px;
+}
+
+.registration-body {
+    padding: 50px;
+}
+
+.dark-form {
+    margin-top: 10px;
+    border-color: var(--containergrey);
+    background: var(--containergrey);
+    box-shadow: var(--light-boxshadow);
+}
+
+
+.form-control:focus{
+    border-color: #f0f3f0;  box-shadow: none; -webkit-box-shadow: none;
+    background: var(--darkteal);
+}
+
 
 
 @media only screen and (min-width: 768px) {
@@ -101,8 +135,6 @@ a:active {
         bottom: -15px;
         left: 90px;
     }
-
-
 }
 
 @media only screen and (min-width: 992px) {
