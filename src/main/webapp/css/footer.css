@@ -18,7 +18,34 @@
     margin:20px 0
 }
 
+.site-footer h6
+{
+    color:var(--activepurple);
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+}
+
 .site-footer a
 {
-    color:var(--);
+    color:var(--textwhite);
 }
+
+.site-footer a:hover
+{
+    color:var(--hoverblue);
+    text-decoration:none;
+}
+
+.footer-links
+{
+    padding-left:0;
+    list-style:none
+}
+
+.footer-links li
+{
+    display:block
+}
+

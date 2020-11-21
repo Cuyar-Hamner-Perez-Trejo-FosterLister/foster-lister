@@ -2,7 +2,7 @@
     /*For Gradient*/
     --darkpurple: #4E4376;
     --gradiantteal: #3B4E76;
-    --darkteal: #2B5876;
+    --darkteal: #2b5876;
     /*For Backgrounds*/
     --darkgrey: #121212;
     --containergrey: #2b2b2b;
@@ -15,7 +15,8 @@
 }
 
 .gradient {
-    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(159, 165, 73) 0%, rgb(76, 102, 76) 90% );
+    background: rgb(78,67,118);
+    background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);
 }
 
 body {
@@ -73,7 +74,7 @@ a:active {
     padding-right: 0;
     margin: 10px;
     height: 350px;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.8)
+    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.8);
 }
 
 .listing-img {
