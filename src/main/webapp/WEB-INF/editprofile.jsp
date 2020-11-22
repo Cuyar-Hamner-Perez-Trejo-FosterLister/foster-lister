@@ -53,8 +53,8 @@
             </div>
 
             <input type="submit" class="btn btn-primary btn-block" value="Edit">
-            <input type="submit" class="btn btn-primary btn-block" value="Delete Profile">
         </form>
+        <form action="/delete" method="Post"><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></form>
     </div>
     <jsp:include page="partials/footer.jsp" />
     <jsp:include page="partials/bootstrap-script.jsp" />
