@@ -13,10 +13,17 @@ import java.io.IOException;
 
 @WebServlet(name= "controllers.DeleteUserServlet", urlPatterns = "/delete")
 public class DeleteUserServlet extends HttpServlet{
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
-        DaoFactory.getUsersDao().destroy(user.getId());
-        response.sendRedirect("/index.jsp");
+        long userId = user.getId();
+
+
+            DaoFactory.getUsersDao().destroy(userId);
+            request.getSession().invalidate();
+            response.sendRedirect("/index.jsp");
+
+
     }
 
 
