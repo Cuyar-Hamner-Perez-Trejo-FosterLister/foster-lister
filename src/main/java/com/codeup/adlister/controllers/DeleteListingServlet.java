@@ -26,7 +26,7 @@ public class DeleteListingServlet extends HttpServlet{
         }else {
             long id = Long.parseLong(request.getParameter("listing"));
             DaoFactory.getListingsDao().destroyListing(id);
-            response.sendRedirect("/ads");
+            response.sendRedirect("/");
         }
     }
 

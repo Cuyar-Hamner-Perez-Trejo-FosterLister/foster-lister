@@ -48,7 +48,7 @@ import java.io.IOException;
             User editUser = new User(user.getId(), email, password, firstname, lastname, address, phonenumber, pets, "");
             DaoFactory.getUsersDao().update(editUser);
             request.getSession().setAttribute("user", editUser);
-            response.sendRedirect("/ads");
+            response.sendRedirect("/");
         }
     }
 

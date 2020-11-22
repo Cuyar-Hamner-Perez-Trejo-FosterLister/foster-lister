@@ -61,7 +61,7 @@ import java.io.IOException;
                        ""
                );
                DaoFactory.getVolunteersDao().update(editVolunteer);
-               response.sendRedirect("/ads");
+               response.sendRedirect("/");
            } else {
                     Listing listing = (Listing) request.getSession().getAttribute("listingEdit");
                     char gender = request.getParameter("gender").charAt(0);
@@ -113,7 +113,7 @@ import java.io.IOException;
                         );
                     }
                DaoFactory.getListingsDao().update(editListing);
-               response.sendRedirect("/ads");
+               response.sendRedirect("/");
 
            }
 
