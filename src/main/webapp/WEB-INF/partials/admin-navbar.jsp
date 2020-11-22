@@ -24,6 +24,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/profile">Profile</a>
                     <a class="dropdown-item" href="/update-user">Edit Profile</a>
+                    <a class="dropdown-item" href="/requests-list">View Requests</a>
+                    <a class="dropdown-item" href="/users-list">View Users</a>
                     <a class="dropdown-item" href="/listings/create">Create Listing</a>
                     <a class="dropdown-item" href="/register">Create User</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
