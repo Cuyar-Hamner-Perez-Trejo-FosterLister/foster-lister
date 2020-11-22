@@ -86,6 +86,24 @@ a:active {
     height: 350px;
     box-shadow: var(--dark-boxshadow);
     background: #4E4376;
+    position: relative;
+}
+
+.icon-btn {
+    position: absolute;
+    top: 10px;
+}
+
+.delete-btn {
+    left: 50px;
+}
+
+.edit-btn {
+    left: 20px;
+}
+
+.fas {
+    color: darkred;
 }
 
 .listing-img {
@@ -100,8 +118,8 @@ a:active {
 
 .button-container {
     position: absolute;
-    bottom: -15px;
-    left: 43px;
+    bottom: 10px;
+    left: 46px;
 }
 
 .registration-card {
@@ -132,7 +150,7 @@ a:active {
 @media only screen and (min-width: 768px) {
     .button-container {
         position: absolute;
-        bottom: -15px;
+        bottom: 10px;
         left: 90px;
     }
 }
@@ -140,8 +158,8 @@ a:active {
 @media only screen and (min-width: 992px) {
     .button-container {
         position: absolute;
-        bottom: -15px;
-        left: 43px;
+        bottom: 10px;
+        left: 40px;
     }
 
     .login-size {

@@ -38,6 +38,12 @@
             <div class="row w-100 justify-content-center">
             <c:forEach var="listing" items="${listings}" begin="0" end="3">
                     <div class="index-card gradient col-5 col-md-5 col-lg-2" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
+                        <c:choose>
+                            <c:when test="${sessionScope.user.admin == true}">
+                                <a class="icon-btn edit-btn" href="/update-listing?listing=${listing.id}"><i class="fas fa-lg fa-edit"></i></a>
+                                <a class="icon-btn delete-btn" href="/delete-listing?listing=${listing.id}"><i class="fas fa-lg fa-trash-alt"></i></a>
+                            </c:when>
+                        </c:choose>
                         <img class="listing-img" src="${listing.imageUrl}" style="height: 200px; width: 100%">
                         <div class="text-container">
                             <h5 class="text-center">${listing.name}</h5>
@@ -45,13 +51,6 @@
                         </div>
                         <div class="button-container p-1">
                             <button type="button" class="btn btn-dark btn-block" onclick="sendID(${listing.id})">More Info</button>
-                            <br>
-                            <c:choose>
-                                <c:when test="${sessionScope.user.admin == true}">
-                                    <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
-                                    <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
-                                </c:when>
-                            </c:choose>
                         </div>
                     </div>
             </c:forEach>
@@ -68,19 +67,17 @@
             <div class="row w-100 justify-content-center">
                 <c:forEach var="volunteer" items="${volunteers}" begin="0" end="3">
                     <div class="index-card gradient col-5 col-md-5 col-lg-2">
+                        <c:choose>
+                            <c:when test="${sessionScope.user.admin == true}">
+                                <a class="icon-btn edit-btn" href="/update-listing?listing=volunteer&id=${volunteer.id}"><i class="fas fa-lg fa-edit"></i></a>
+                                <a class="icon-btn delete-btn" href="/delete-listing?listing=volunteer&id=${volunteer.id}"><i class="fas fa-lg fa-trash-alt"></i></a>
+                            </c:when>
+                        </c:choose>
 <%--                        <img class="listing-img" src="${listing.imageUrl}" ">--%>
                         <img class="listing-img" src="http://via.placeholder.com/200">
                         <div class="text-container">
                             <h5 class="text-center">${volunteer.title}</h5>
                             <p class="text-center">${volunteer.date}</p>
-                        </div>
-                        <div class="button-container p-1">
-                            <c:choose>
-                                <c:when test="${sessionScope.user.admin == true}">
-                                    <a href="/update-listing?listing=volunteer&id=${volunteer.id}}">Edit Listing</a>
-                                    <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete Listing</a>
-                                </c:when>
-                            </c:choose>
                         </div>
                     </div>
                 </c:forEach>
