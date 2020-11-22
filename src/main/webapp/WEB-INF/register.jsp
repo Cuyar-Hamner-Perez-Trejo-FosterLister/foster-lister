@@ -20,13 +20,13 @@
     </c:choose>
 
         <div class="container">
-            <div class="card registration-card" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
+            <div class="card registration-card gradient">
                 <div class="card-body registration-body">
                     <form action="/register" method="post">
                         <c:choose>
                             <c:when test="${sessionScope.user == null}">
                                 <div>
-                                    <h1 class="mb-4 text-center lg-font">Register for an account</h1>
+                                    <h1 class="mb-4 lg-font">Register for an account</h1>
                                 </div>
                             </c:when>
                             <c:when test="${sessionScope.user.admin == true}">

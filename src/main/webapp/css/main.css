@@ -144,4 +144,9 @@ a:active {
         left: 43px;
     }
 
+    .login-size {
+        width: 50%;
+        margin-bottom: 80px;
+    }
+
 }
