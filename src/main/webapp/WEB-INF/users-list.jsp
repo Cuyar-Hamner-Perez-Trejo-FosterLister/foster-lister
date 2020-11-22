@@ -40,6 +40,7 @@
         </tr>
         </thead>
         <tbody>
+
             <c:forEach var="user" items="${users}">
                 <tr>
                     <td>${user.firstName}</td>
@@ -48,10 +49,17 @@
                     <td>${user.phoneNumber}</td>
                     <td>${user.email}</td>
                     <td>${user.numberOfPets}</td>
-                    <form action="/delete-user" method="POST">
-                        <input type="hidden" value="${user.id}" name="userId">
-                    <td><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></td>
-                    </form>
+                    <c:choose>
+                        <c:when test="${user.admin == false}">
+                            <form action="/delete-user" method="POST">
+                                <input type="hidden" value="${user.id}" name="userId">
+                            <td><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></td>
+                            </form>
+                        </c:when>
+                        <c:otherwise>
+                            <div></div>
+                        </c:otherwise>
+                    </c:choose>
                 </tr>
             </c:forEach>
         </tbody>
