@@ -96,12 +96,12 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public void destroy(long id) {
-        String query = "DELETE FROM users WHERE id = ?";
+    public void destroy(long Anid) {
+        String query = "DELETE FROM users WHERE id = " + Anid + " LIMIT 1";
+        PreparedStatement stmt;
         try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setLong(1, id);
-            stmt.execute();
+            stmt = connection.prepareStatement(query);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting user");
         }
