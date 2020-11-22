@@ -20,7 +20,7 @@
     </c:choose>
     <div class="container">
         <c:choose>
-            <c:when test = "${}">
+            <c:when test = "${sessionScope.validAttempt == false}">
                 <h1>Login</h1>
                 <p>Invalid Email or Password. Please try again.</p>
             </c:when>
