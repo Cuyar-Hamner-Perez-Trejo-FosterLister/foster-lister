@@ -36,6 +36,7 @@
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col"># of Pets</th>
+            <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -47,6 +48,10 @@
                     <td>${user.phoneNumber}</td>
                     <td>${user.email}</td>
                     <td>${user.numberOfPets}</td>
+                    <form action="/delete-user" method="POST">
+                        <input type="hidden" value="${user.id}" name="userId">
+                    <td><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></td>
+                    </form>
                 </tr>
             </c:forEach>
         </tbody>
