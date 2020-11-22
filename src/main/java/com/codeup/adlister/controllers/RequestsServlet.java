@@ -19,9 +19,9 @@ public class RequestsServlet extends HttpServlet {
             return;
         }
 
-        Long listingId = Long.parseLong(request.getParameter("listing"));
+        long listingId = Long.parseLong(request.getParameter("listing"));
         User user = (User) request.getSession().getAttribute("user");
-        Long userId = user.getId();
+        long userId = user.getId();
         Date currentDate = new Date();
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
