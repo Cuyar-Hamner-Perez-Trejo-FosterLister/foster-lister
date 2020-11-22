@@ -1,11 +1,11 @@
 USE fosterlister_db;
 
 INSERT INTO users(email, first_name, last_name, password, address, number_pets, phone, is_admin, image_url)
-VALUES ('jim.eagle23@example.com', 'Jim', 'Eagle', '$2a$12$/3bvW/pqZV.xn0saGpJMxuwEpEYliSDgHbcq83zGLVpaxTmV2sQou', '456 Simple Street San Antonio, TX 78444', 3, '444-5555', 1, ''),
-       ('reya.loxos@example.com', 'Reya', 'Loxos', '$2a$12$kmv.lliCNfppI6oCgsUefeLvq7JUeyTD2Ycyj1ISMiZoA/jdiwrF.', '227 Why You Asking St San Antonio, TX 76555', 1, '111-0123', 0, ''),
-       ('amos.veno99@example.com', 'Amos', 'Veno', '$2a$12$OyC8RAGpWH7kT1Vc9KNWRewYF0Tsz96zezROVaS0Ka75KyKlwoTTq', '4567 Counting Ave San Antonio TX 78432', 2, '856-0082', 0, ''),
-       ('kelly.kapoor43@example.com', 'Kelly', 'Kapoor', '$2a$12$WuKdC1X9zHWi/cIhl1er5.DLODQD4CtCTShVvEmbmfROGconrHsyO', '88 Clearing Ave San Antonio TX 78832', 1, '895-0091', 1, ''),
-       ('rocky.balboa8@example.com', 'Rocky', 'Balboa', '$2a$12$Gxm/NHUAx/mk1eDU9hz6Q.1X4yRYFlOrdBoUyCkOhMOG6SpasO9i.', '5555 Sequel Master St San Antonio TX 78333', 0, '111-555', 0, '');
+VALUES ('jim.eagle23@example.com', 'Jim', 'Eagle', '$2a$12$/3bvW/pqZV.xn0saGpJMxuwEpEYliSDgHbcq83zGLVpaxTmV2sQou', '456 Simple Street San Antonio, TX 78444', 3, '444-5555', 1, 'https://ui-avatars.com/api/?name=Jim+Eagle&background=random&size=32'),
+       ('reya.loxos@example.com', 'Reya', 'Loxos', '$2a$12$kmv.lliCNfppI6oCgsUefeLvq7JUeyTD2Ycyj1ISMiZoA/jdiwrF.', '227 Why You Asking St San Antonio, TX 76555', 1, '111-0123', 0, 'https://ui-avatars.com/api/?name=Reya+Loxos&background=random&size=32'),
+       ('amos.veno99@example.com', 'Amos', 'Veno', '$2a$12$OyC8RAGpWH7kT1Vc9KNWRewYF0Tsz96zezROVaS0Ka75KyKlwoTTq', '4567 Counting Ave San Antonio TX 78432', 2, '856-0082', 0, 'https://ui-avatars.com/api/?name=Amos+Veno&background=random&size=32'),
+       ('kelly.kapoor43@example.com', 'Kelly', 'Kapoor', '$2a$12$WuKdC1X9zHWi/cIhl1er5.DLODQD4CtCTShVvEmbmfROGconrHsyO', '88 Clearing Ave San Antonio TX 78832', 1, '895-0091', 1, 'https://ui-avatars.com/api/?name=Kelly+Kapoor&background=random&size=32'),
+       ('rocky.balboa8@example.com', 'Rocky', 'Balboa', '$2a$12$Gxm/NHUAx/mk1eDU9hz6Q.1X4yRYFlOrdBoUyCkOhMOG6SpasO9i.', '5555 Sequel Master St San Antonio TX 78333', 0, '111-555', 0, 'https://ui-avatars.com/api/?name=Rocky+Balboa&background=random&size=32');
 
 /*Jim password = rockingeagle */
 /*Reya password = loxosreya */
