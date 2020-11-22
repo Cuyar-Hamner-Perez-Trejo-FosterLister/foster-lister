@@ -19,24 +19,28 @@
         </c:when>
     </c:choose>
     <div class="container">
-        <c:choose>
-            <c:when test = "${sessionScope.validAttempt == false}">
-                <h1>Login</h1>
-                <p>Invalid Email or Password. Please try again.</p>
-            </c:when>
-            <c:otherwise>
-                <h1>Login</h1>
-            </c:otherwise>
-        </c:choose>
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <input id="email" name="email" class="form-control" type="text" placeholder="email">
+        <div class="card registration-card login-size gradient mx-auto">
+            <div class="card-body registration-body">
+                <c:choose>
+                    <c:when test = "${sessionScope.validAttempt == false}">
+                        <h1 class="lg-font">Login</h1>
+                        <p>Invalid Email or Password. Please try again.</p>
+                    </c:when>
+                    <c:otherwise>
+                        <h1 class="lg-font">Login</h1>
+                    </c:otherwise>
+                </c:choose>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <input id="email" name="email" class="form-control dark-form" type="text" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <input id="password" name="password" class="form-control dark-form" type="password" placeholder="password">
+                    </div>
+                    <input type="submit" class="btn btn-dark btn-block" value="Log In">
+                </form>
             </div>
-            <div class="form-group">
-                <input id="password" name="password" class="form-control" type="password" placeholder="password">
-            </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
-        </form>
+        </div>
     </div>
 
     <jsp:include page="partials/footer.jsp" />
