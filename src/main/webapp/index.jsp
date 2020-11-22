@@ -7,6 +7,9 @@
     </jsp:include>
 </head>
 <body>
+<script>
+    window.location.replace("/ads");
+</script>
     <c:choose>
         <c:when test = "${sessionScope.user == null}">
             <jsp:include page="/WEB-INF/partials/guest-navbar.jsp" />
