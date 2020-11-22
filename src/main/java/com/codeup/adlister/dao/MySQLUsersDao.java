@@ -41,7 +41,9 @@ public class MySQLUsersDao implements Users {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, email);
-            return extractUser(stmt.executeQuery());
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractUser(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by email", e);
         }
@@ -96,8 +98,8 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public void destroy(long Anid) {
-        String query = "DELETE FROM users WHERE id = " + Anid + " LIMIT 1";
+    public void destroy(long id) {
+        String query = "DELETE FROM users WHERE id = ? LIMIT 1";
         PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement(query);
@@ -108,9 +110,6 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
-            return null;
-        }
         return new User(
             rs.getLong("id"),
             rs.getString("email"),
