@@ -20,28 +20,45 @@
         </c:when>
     </c:choose>
 
-    <div class="container">
-        <img src="${listing.imageUrl}">
-        <h1>${listing.name}</h1>
-        <p>${listing.type}</p>
-        <p>${listing.breed}</p>
-        <p>${listing.dob}</p>
-        <p>${listing.gender}</p>
-        <p>${listing.conditions}</p>
-        <p>${listing.description}</p>
-        <p>${listing.size}</p>
-        <p>${listing.createdTime}</p>
+    <div class="listing-container gradient mx-auto registration-card p-4">
+        <div>
+            <img src="${listing.imageUrl}" style="width: 60%; margin: 10% 20%">
+        </div>
+        <hr>
+        <div class="row">
+            <div class="pt-2 col-md-6">
+                <h1>${listing.name}</h1>
+                <hr>
+                <p>${listing.type}</p>
+                <hr>
+                <p>Breed: ${listing.breed}</p>
+                <hr>
+                <p>DOB: ${listing.dob}</p>
+                <hr>
+                <p>Gender: ${listing.gender}</p>
+                <hr>
+                <p>Medical Conditions: ${listing.conditions}</p>
+                <hr>
+                <p>Size: ${listing.size}</p>
+            </div>
+            <div class="col-md-6 pt-4">
+                <p>${listing.description}</p>
+                <hr>
+            <c:choose>
+                <c:when test="${sessionScope.user == null}">
+                    <p>Interested in adopting ${listing.name}? Create an account to make a request!</p>
+                    <button type="button" class="btn btn-dark btn-block" onclick="redirect()">Create Account</button>
+                </c:when>
+                <c:when test="${sessionScope.user != null}">
+                    <p>Interested in adopting ${listing.name}? Make a request!</p>
+                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#ThankYouAdoptModalLong">Request to Adopt!</button>
+                </c:when>
+            </c:choose>
+            </div>
+        </div>
 
-        <c:choose>
-            <c:when test="${sessionScope.user == null}">
-                <p>Interested in adopting ${listing.name}? Create an account to make a request!</p>
-                <button type="button" class="btn btn-secondary" onclick="redirect()">Create Account</button>
-            </c:when>
-            <c:when test="${sessionScope.user != null}">
-                <p>Interested in adopting ${listing.name}? Make a request!</p>
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ThankYouAdoptModalLong">Request to Adopt!</button>
-            </c:when>
-        </c:choose>
+
+
 
     </div>
 
@@ -57,7 +74,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Foster Lister will review your request and will get back to you in a few days.</p>
-                    <p>If you have any questions please visit our <a href="#">FAQ Page</a> or email us at staff@fosterlister.com </p>
+                    <p>If you have any questions please visit our <a href="/faq">FAQ Page</a> or email us at staff@fosterlister.com </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Request</button>

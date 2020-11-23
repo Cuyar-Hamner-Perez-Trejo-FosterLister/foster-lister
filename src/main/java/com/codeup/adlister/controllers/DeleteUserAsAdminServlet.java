@@ -11,18 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name= "controllers.DeleteUserServlet", urlPatterns = "/delete")
-public class DeleteUserServlet extends HttpServlet{
+@WebServlet(name= "controllers.DeleteUserAsAdminServlet", urlPatterns = "/delete-user")
+public class DeleteUserAsAdminServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = (User) request.getSession().getAttribute("user");
-        long userId = user.getId();
+        long userId = Long.parseLong(request.getParameter("userId"));
 
-
-            DaoFactory.getUsersDao().destroy(userId);
-            request.getSession().invalidate();
-            response.sendRedirect("/index.jsp");
-
+        DaoFactory.getUsersDao().destroy(userId);
+        response.sendRedirect("/users-list.jsp");
 
     }
 

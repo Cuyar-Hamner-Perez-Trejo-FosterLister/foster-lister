@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name= "controllers.UserListServlet", urlPatterns = "/users-list")
+@WebServlet(name= "controllers.UsersListServlet", urlPatterns = "/users-list")
 public class UsersListServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setAttribute("users", DaoFactory.getUsersDao().all());

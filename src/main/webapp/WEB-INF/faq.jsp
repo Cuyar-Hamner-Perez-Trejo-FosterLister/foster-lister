@@ -26,8 +26,8 @@
         </c:when>
     </c:choose>
     <div class="container">
-        <h1>Adoption, Foster, and Volunteer FAQ</h1>
-        <dl>
+        <h1 class="m-3">Adoption, Foster, and Volunteer FAQ</h1>
+        <dl class="p-3">
             <dt>How can I contact the shelter?</dt>
             <dd>You can contact us by any of the following: phone: 555-555-5555 email: pets@example.com address: 123 Shelter Lane, San Antonio, Tx 78254</dd>
             <dt>How can I apply for adoption or foster?</dt>
