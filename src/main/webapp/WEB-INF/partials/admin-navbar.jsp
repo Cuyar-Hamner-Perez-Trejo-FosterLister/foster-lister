@@ -19,7 +19,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ${sessionScope.user.firstName} ${sessionScope.user.lastName}
+                   <span class="mr-1">${sessionScope.user.firstName} ${sessionScope.user.lastName}</span>   <img class="rounded" src="${sessionScope.user.imgURL}" alt="avatar">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/profile">Profile</a>
