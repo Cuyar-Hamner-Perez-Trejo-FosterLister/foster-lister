@@ -137,6 +137,10 @@ a:active {
     border: var(--textwhite) 3px none;
 }
 
+.listing-container {
+    width: 90%
+}
+
 @media only screen and (min-width: 768px) {
     .button-container {
         position: absolute;
@@ -160,5 +164,9 @@ a:active {
     .profile-container {
         display: grid;
         width: 30%;
+    }
+
+    .listing-container {
+        width: 50%
     }
 }
