@@ -37,7 +37,7 @@
         <div id="pet-index-listing">
             <div class="w-100 d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
             <c:forEach var="listing" items="${listings}" begin="0" end="3">
-                    <div class="index-card gradient d-flex flex-column pb-4" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
+                    <div class="index-card gradient d-flex flex-column pb-4">
                         <img class="listing-img" src="${listing.imageUrl}" style="height: 200px; width: 100%">
                         <div class="text-container">
                             <h5 class="text-center">${listing.name}</h5>

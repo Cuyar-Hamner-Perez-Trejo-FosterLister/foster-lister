@@ -21,21 +21,23 @@
         </c:when>
     </c:choose>
 
-    <div class="container">
+    <div class="container pt-4">
         <!--Filter Container -->
-        <div class="container">
-            <div class="card">
+        <div class="row">
+            <div class="col-md-4 card gradient">
                 <div class="card-body">
                     <c:choose>
                         <c:when test="${viewListingType == 'dogs'}">
                             <h1>Filter Dogs</h1>
+                            <hr>
                         </c:when>
                         <c:when test="${viewListingType == 'cats'}">
                             <h1>Filter Cats</h1>
+                            <hr>
                         </c:when>
                     </c:choose>
 
-                    <form>
+                    <form class="pt-3">
 <%--                        <div class="input-group">--%>
 <%--                            <input type="text" class="form-control" placeholder="Search Breed, Age, Size, or Gender" aria-label="Search Breed, Age, Size, or Gender" aria-describedby="search-button">--%>
 <%--                            <div id ="search" class="input-group-prepend">--%>
@@ -70,31 +72,36 @@
                     </form>
                 </div>
             </div>
-        </div>
-
-        <div class="container" id="index-listing">
-            <c:forEach var="listing" items="${listings}">
-                <div class="">
-                    <div class="index-card border mx-3">
-                        <img src="${listing.imageUrl}" style="height: 200px; width: 200px">
-                        <div class="">
-                            <p class="text-center">${listing.name}</p>
-                            <p class="text-center">${listing.dob} • ${listing.breed}</p>
-                        </div>
-                        <div class="border-top">
-                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
-                            <br>
+            <div class="col-md-8" id="index-listing">
+                <div class="w-100 d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
+                <c:forEach var="listing" items="${listings}">
+                        <div class="index-card gradient d-flex flex-column pb-4">
+                            <img class="listing-img" src="${listing.imageUrl}" style="height: 200px; width: 100%">
+                            <div class="text-container">
+                                <p class="text-center">${listing.name}</p>
+                                <p class="text-center">${listing.dob} • ${listing.breed}</p>
+                            </div>
                             <c:choose>
                                 <c:when test="${sessionScope.user.admin == true}">
-                                    <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
-                                    <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
+                                    <div class="text-center">
+                                        <a href="/update-listing?listing=${listing.id}" class="pr-3">Edit</a>
+                                        <a href="/delete-listing?listing=${listing.id}">Delete</a>
+                                    </div>
                                 </c:when>
+                                <c:otherwise>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-dark button" onclick="sendID(${listing.id})">More Info</button>
+                                        <br>
+                                    </div>
+                                </c:otherwise>
                             </c:choose>
                         </div>
-                    </div>
+                </c:forEach>
                 </div>
-            </c:forEach>
+            </div>
+
         </div>
+
 
 
     </div>
