@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `fosterlister_db`.`users_roles` (
   CONSTRAINT `roleId`
     FOREIGN KEY (`role_id`)
     REFERENCES `fosterlister_db`.`roles` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `fosterlister_db`.`listings` (
   CONSTRAINT `listing_role_id`
     FOREIGN KEY (`role_id`)
     REFERENCES `fosterlister_db`.`roles` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `fosterlister_db`.`requests` (
   CONSTRAINT `request_listing_id`
     FOREIGN KEY (`listing_id`)
     REFERENCES `fosterlister_db`.`listings` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -161,10 +161,13 @@ CREATE TABLE IF NOT EXISTS `fosterlister_db`.`volunteers` (
   CONSTRAINT `volunteer_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `fosterlister_db`.`users` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+alter table `fosterlister_db`.`requests` add FOREIGN KEY (`user_id`)
+    REFERENCES `fosterlister_db`.`users` (`id`) on DELETE CASCADE;
+show create table `fosterlister_db`.`requests`;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

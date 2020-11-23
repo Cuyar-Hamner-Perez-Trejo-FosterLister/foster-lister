@@ -52,9 +52,10 @@
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password">
             </div>
 
-            <input type="submit" class="btn btn-dark btn-block" value="Edit">
-            <input type="submit" class="btn btn-dark btn-block" value="Delete Profile">
+            <input type="submit" class="btn btn-primary btn-block" value="Edit">
+
         </form>
+        <form action="/delete" method="Post"><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></form>
     </div>
     <jsp:include page="partials/footer.jsp" />
     <jsp:include page="partials/bootstrap-script.jsp" />
