@@ -155,9 +155,10 @@
         </c:when>
     </c:choose>
 </div>
-<jsp:include page="/WEB-INF/partials/jquery-script.jsp" />
+
 <jsp:include page="/WEB-INF/partials/footer.jsp" />
 <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
+<jsp:include page="/WEB-INF/partials/jquery-script.jsp" />
 
 <script>
     const change = value => window.location.assign("/listings/create?choice=" + value);
