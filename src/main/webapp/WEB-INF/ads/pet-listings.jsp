@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,16 +26,47 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                    <h1>Filter Dogs</h1>
-                    <form class="form-inline">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search Breed, Age, Size, or Gender" aria-label="Search Breed, Age, Size, or Gender" aria-describedby="search-button">
-                            <div id ="search" class="input-group-prepend">
-                                <span class="input-group-text" id="search-button">@</span>
-                            </div>
+                    <c:choose>
+                        <c:when test="${viewListingType == 'dogs'}">
+                            <h1>Filter Dogs</h1>
+                        </c:when>
+                        <c:when test="${viewListingType == 'cats'}">
+                            <h1>Filter Cats</h1>
+                        </c:when>
+                    </c:choose>
+
+                    <form>
+<%--                        <div class="input-group">--%>
+<%--                            <input type="text" class="form-control" placeholder="Search Breed, Age, Size, or Gender" aria-label="Search Breed, Age, Size, or Gender" aria-describedby="search-button">--%>
+<%--                            <div id ="search" class="input-group-prepend">--%>
+<%--                                <span class="input-group-text" id="search-button">@</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+                        <div class="form-group">
+                            <label class="d-none" for="foster-or-adoption">Foster or Adoption</label>
+                            <select class="form-control" id="foster-or-adoption">
+                                <option selected>Foster or Adoption</option>
+                                <option value="foster">Foster</option>
+                                <option value="adoption">Adoption</option>
+                            </select>
                         </div>
-                        <button type="button" class="btn btn-secondary btn-lg">Foster</button>
-                        <button type="button" class="btn btn-secondary btn-lg">Adoption</button>
+                        <div class="form-group">
+                            <label class="d-none" for="breed">Breed</label>
+                            <select class="form-control" id="breed">
+                                <option selected>Breed</option>
+                                <c:forEach var="listing" items="${listings}">
+                                    <option value="${listing.breed}">${listing.breed}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="d-none" for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option selected>Gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -44,13 +76,13 @@
             <c:forEach var="listing" items="${listings}">
                 <div class="">
                     <div class="index-card border mx-3">
-                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/200"></a>
+                        <img src="${listing.imageUrl}" style="height: 200px; width: 200px">
                         <div class="">
                             <p class="text-center">${listing.name}</p>
                             <p class="text-center">${listing.dob} • ${listing.breed}</p>
                         </div>
                         <div class="border-top">
-                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button
+                            <button type="button" class="btn btn-secondary" onclick="sendID(${listing.id})">More Info</button>
                             <br>
                             <c:choose>
                                 <c:when test="${sessionScope.user.admin == true}">

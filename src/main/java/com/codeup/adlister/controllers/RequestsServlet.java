@@ -14,9 +14,14 @@ import java.util.Date;
 @WebServlet(name = "RequestsServlet", urlPatterns = "/requests")
 public class RequestsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Long listingId = Long.parseLong(request.getParameter("listing"));
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
+
+        long listingId = Long.parseLong(request.getParameter("listing"));
         User user = (User) request.getSession().getAttribute("user");
-        Long userId = user.getId();
+        long userId = user.getId();
         Date currentDate = new Date();
         java.text.SimpleDateFormat sdf =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

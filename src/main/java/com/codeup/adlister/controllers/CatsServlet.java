@@ -13,6 +13,7 @@ import java.io.IOException;
 public class CatsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("listings", DaoFactory.getListingsDao().allCats());
+        request.setAttribute("viewListingType", "cats");
         request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
     }
 }

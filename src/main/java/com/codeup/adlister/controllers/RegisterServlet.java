@@ -24,18 +24,13 @@ public class RegisterServlet extends HttpServlet {
         String phonenumber = request.getParameter("phonenumber");
         int pets = Integer.parseInt(request.getParameter("pets"));
         String email = request.getParameter("email");
-//        String imageUrl = request.getParameter("image");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
         String isAdminString = request.getParameter("is-admin");
+        String imgUrl = "https://ui-avatars.com/api/?name=" + firstname + "+" + lastname + "&background=random&size=32";
 
         boolean isAdmin;
-
-        if(isAdminString.equals("true")) {
-            isAdmin = true;
-        } else {
-            isAdmin = false;
-        }
+        isAdmin = isAdminString != null && isAdminString.equals("true");
 
         // validate input
         boolean inputHasErrors = firstname.isEmpty()
@@ -51,13 +46,12 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register");
             return;
         }
-
-        if (admin.isAdmin()){
-            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "", isAdmin);
+if (admin != null && admin.isAdmin()) {
+            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, imgUrl, isAdmin);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/profile");
         } else {
-            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, "", false);
+            User user = new User(email, password, firstname, lastname, address, phonenumber, pets, imgUrl, false);
             DaoFactory.getUsersDao().insert(user);
             response.sendRedirect("/login");
         }

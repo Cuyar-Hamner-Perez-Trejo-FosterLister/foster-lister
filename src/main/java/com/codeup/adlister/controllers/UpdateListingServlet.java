@@ -15,6 +15,10 @@ import java.io.IOException;
     @WebServlet(name = "controllers.UpdateListingServlet", urlPatterns = "/update-listing")
     public class UpdateListingServlet  extends HttpServlet {
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            if (request.getSession().getAttribute("user") == null) {
+                response.sendRedirect("/login");
+                return;
+            }
             if(request.getParameter("listing").equals("volunteer")){
                 Long id = Long.parseLong(request.getParameter("id"));
                 Volunteer volunteer =DaoFactory.getVolunteersDao().searchVolunteer(id);
@@ -75,7 +79,7 @@ import java.io.IOException;
                     editListing = new Listing(
                             listing.getId(),
                             listing.getUserId(),
-                            "",
+                            listing.getImageUrl(),
                             name,
                             type,
                             breed,
@@ -93,7 +97,7 @@ import java.io.IOException;
                         editListing = new Listing(
                                 listing.getId(),
                                 listing.getUserId(),
-                                "",
+                                listing.getImageUrl(),
                                 name,
                                 type,
                                 breed,

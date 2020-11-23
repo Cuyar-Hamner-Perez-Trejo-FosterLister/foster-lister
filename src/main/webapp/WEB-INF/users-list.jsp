@@ -27,7 +27,7 @@
         </c:when>
     </c:choose>
 
-    <table class="table">
+    <table class="table mt-3">
         <thead class="thead-light">
         <tr>
             <th scope="col">First</th>
