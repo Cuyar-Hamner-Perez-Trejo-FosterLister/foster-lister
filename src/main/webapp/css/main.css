@@ -145,7 +145,15 @@ a:active {
     background: var(--containergrey);
 }
 
+.profile-container {
+    display: grid;
+    width: 90%;
+}
 
+.profile-picture {
+    border-radius: 50%;
+    border: var(--textwhite) 3px none;
+}
 
 @media only screen and (min-width: 768px) {
     .button-container {
@@ -165,6 +173,11 @@ a:active {
     .login-size {
         width: 50%;
         margin-bottom: 80px;
+    }
+
+    .profile-container {
+        display: grid;
+        width: 30%;
     }
 
 }

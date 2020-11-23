@@ -20,31 +20,23 @@
         </c:when>
     </c:choose>
 
-<%--    <div class="container">--%>
-<%--        <h1>Welcome, ${sessionScope.user.firstName}!</h1>--%>
-<%--        <p>${user.email}</p--%>
-<%--        <p>${user.address}</p--%>
-<%--        <p>${user.phoneNumber}</p>--%>
-<%--        <p>${user.numberOfPets}</p--%>
-<%--    </div>--%>
-
-    <div class="container">
-        <div class="card gradient">
-            <div class="card-body">
-                <div class="profile-picture">
-
-                </div>
-                <div class="profile-info">
-                    <p>${user.firstName}</p>
-                    <p>${user.lastName}</p>
-                    <p>${user.email}</p>
-                    <p>${user.address}</p
-                    <p>${user.phoneNumber}</p>
-                    <p>${user.numberOfPets}</p
-                </div>
-            </div>
+    <div class="profile-container gradient mx-auto registration-card justify-content-center p-4">
+        <div class="mx-auto">
+            <img class="profile-picture" src="http://via.placeholder.com/200">
+        </div>
+        <div class="profile-info text-center pt-4">
+            <h3>${user.firstName} ${user.lastName}</h3>
+            <hr>
+            <p>Email: <span class="profile-content">${user.email}</span></p>
+            <hr>
+            <p>Address: <span class="profile-content">${user.address}</span></p>
+            <hr>
+            <p>Phone Number: <span class="profile-content">${user.phoneNumber}</span></p>
+            <hr>
+            <p>Number of Pets: <span class="profile-content">${user.numberOfPets}</span></p>
         </div>
     </div>
+
 
     <jsp:include page="partials/footer.jsp" />
     <jsp:include page="partials/bootstrap-script.jsp" />
