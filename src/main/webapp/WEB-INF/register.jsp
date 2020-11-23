@@ -38,39 +38,39 @@
                         <div class="form-row">
                             <div class="form-group col-md-4 mb-3">
                                 <label for="firstname"></label>
-                                <input id="firstname" name="firstname" class="form-control dark-form" type="text" placeholder="First Name" required>
+                                <input id="firstname" name="firstname" class="form-control" type="text" placeholder="First Name" required>
                             </div>
                             <div class="form-group col-md-4 mb-3">
                                 <label for="lastname"></label>
-                                <input id="lastname" name="lastname" class="form-control dark-form" type="text" placeholder="Last Name" required>
+                                <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Last Name" required>
                             </div>
                             <div class="form-group col-md-4 mb-3">
                                 <label for="email"></label>
-                                <input id="email" name="email" class="form-control dark-form" type="text" placeholder="Email" required>
+                                <input id="email" name="email" class="form-control" type="text" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
                                 <label for="password"></label>
-                                <input id="password" name="password" class="form-control dark-form" type="password" placeholder="Password" required>
+                                <input id="password" name="password" class="form-control" type="password" placeholder="Password" required>
                             </div>
                             <div class="form-group col-md-6 mb-3">
                                 <label for="confirm_password"></label>
-                                <input id="confirm_password" name="confirm_password" class="form-control dark-form" type="password" placeholder="Confirm Password" required>
+                                <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6 mb-3">
                                 <label for="address"></label>
-                                <input id="address" name="address" class="form-control dark-form" type="text" placeholder="Address" required>
+                                <input id="address" name="address" class="form-control" type="text" placeholder="Address" required>
                             </div>
                             <div class="form-group col-md-3 mb-3">
                                 <label for="phonenumber"></label>
-                                <input id="phonenumber" name="phonenumber" class="form-control dark-form" type="text" placeholder="Phone Number" required>
+                                <input id="phonenumber" name="phonenumber" class="form-control" type="text" placeholder="Phone Number" required>
                             </div>
                             <div class="form-group col-md-3 mb-3">
                                 <label for="pets"></label>
-                                <input id="pets" name="pets" class="form-control dark-form" type="text" placeholder="Number of Pets" required>
+                                <input id="pets" name="pets" class="form-control" type="text" placeholder="Number of Pets" required>
                             </div>
                         </div>
                         <c:choose>
