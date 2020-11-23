@@ -46,7 +46,7 @@
 <%--                        </div>--%>
                         <div class="form-group">
                             <label class="d-none" for="foster-or-adoption">Foster or Adoption</label>
-                            <select class="form-control" id="foster-or-adoption">
+                            <select class="form-control" id="foster-or-adoption" name="choiceFA" onChange = "change('?choiceFA=', this.options[this.selectedIndex].value)">
                                 <option selected>Foster or Adoption</option>
                                 <option value="foster">Foster</option>
                                 <option value="adoption">Adoption</option>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group">
                             <label class="d-none" for="breed">Breed</label>
-                            <select class="form-control" id="breed">
+                            <select class="form-control" id="breed" name="choiceB" onChange = "change('?choiceB=', this.options[this.selectedIndex].value)">
                                 <option selected>Breed</option>
                                 <c:forEach var="listing" items="${listings}">
                                     <option value="${listing.breed}">${listing.breed}</option>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label class="d-none" for="gender">Gender</label>
-                            <select class="form-control" id="gender">
+                            <select class="form-control" id="gender" name="choiceG" onChange = "change('?choiceG=', this.options[this.selectedIndex].value)">
                                 <option selected>Gender</option>
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
@@ -110,7 +110,9 @@
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 
     <script>
+        let endpoint = "${viewListingType}";
         const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
+        const change = (query, params) => window.location.assign("/" + endpoint + query + params);
     </script>
 
 </body>
