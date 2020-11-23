@@ -73,10 +73,6 @@ a:active {
     position: relative;
 }
 
-#index-listing, #volunteer-listing {
-    display: flex;
-}
-
 .index-card {
     border-radius: 25px;
     width: 150px;
@@ -85,7 +81,6 @@ a:active {
     margin: 10px;
     height: 350px;
     box-shadow: var(--dark-boxshadow);
-    background: #4E4376;
 }
 
 .listing-img {
@@ -121,13 +116,31 @@ a:active {
     box-shadow: var(--light-boxshadow);
 }
 
-
-.form-control:focus{
-    border-color: #f0f3f0;  box-shadow: none; -webkit-box-shadow: none;
-    background: var(--darkteal);
+.profile-container {
+    display: grid;
+    width: 90%;
 }
 
+.profile-picture {
+    border-radius: 50%;
+    border: var(--textwhite) 3px none;
+}
 
+.listing-container {
+    width: 90%
+}
+
+.table-style {
+    margin-bottom: 150px;
+}
+
+td {
+    color: var(--textwhite)
+}
+
+.modal-content {
+    background-color: var(--containergrey);
+}
 
 @media only screen and (min-width: 768px) {
     .button-container {
@@ -149,4 +162,12 @@ a:active {
         margin-bottom: 80px;
     }
 
+    .profile-container {
+        display: grid;
+        width: 30%;
+    }
+
+    .listing-container {
+        width: 50%
+    }
 }

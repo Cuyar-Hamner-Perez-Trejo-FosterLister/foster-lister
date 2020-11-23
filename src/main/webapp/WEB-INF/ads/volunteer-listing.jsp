@@ -19,12 +19,21 @@
         </c:when>
     </c:choose>
 
-    <div class="container">
-        <img src="${volunteer.imageUrl}">
-        <h3>${volunteer.title}</h3>
-        <p>${volunteer.date}</p>
-        <p>${volunteer.description}</p>
-        <p>${volunteer.contact}</p>
+    <div class="listing-container gradient mx-auto registration-card p-4">
+        <div class="row">
+            <div class="col-md-6">
+<%--            <img src="${volunteer.imageUrl}" style="width: 60%;">--%>
+                <img src="http://via.placeholder.com/200" style="width: 60%; margin: 20%;">
+            </div>
+            <hr>
+            <div class="col-md-6 my-auto">
+                <h3>${volunteer.title}</h3>
+                <p>${volunteer.date}</p>
+                <p>${volunteer.description}</p>
+                <p>${volunteer.contact}</p>
+            </div>
+        </div>
+
     </div>
 
     <jsp:include page="../partials/footer.jsp" />
