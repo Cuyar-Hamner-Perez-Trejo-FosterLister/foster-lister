@@ -31,28 +31,32 @@
 
     <div class="container">
         <div>
-            <h2 class="mt-4 lg-font">Available Pets</h2>
+            <h2 class="mt-4 lg-font text-center text-md-left">Available Pets</h2>
         </div>
 
         <div id="pet-index-listing">
-            <div class="row w-100 justify-content-center">
+            <div class="w-100 d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
             <c:forEach var="listing" items="${listings}" begin="0" end="3">
-                    <div class="index-card gradient col-5 col-md-5 col-lg-2" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
+                    <div class="index-card gradient d-flex flex-column pb-4" style="background: linear-gradient(90deg, rgba(78,67,118,1) 0%, rgba(59,78,118,1) 82%, rgba(43,88,118,1) 100%);">
                         <img class="listing-img" src="${listing.imageUrl}" style="height: 200px; width: 100%">
                         <div class="text-container">
                             <h5 class="text-center">${listing.name}</h5>
                             <p class="text-center">${listing.dob} • ${listing.breed}</p>
                         </div>
-                        <div class="button-container p-1">
-                            <button type="button" class="btn btn-dark btn-block" onclick="sendID(${listing.id})">More Info</button>
-                            <br>
                             <c:choose>
                                 <c:when test="${sessionScope.user.admin == true}">
-                                    <a href="/update-listing?listing=${listing.id}">Edit Listing</a>
-                                    <a href="/delete-listing?listing=${listing.id}">Delete Listing</a>
+                                    <div class="text-center">
+                                    <a href="/update-listing?listing=${listing.id}" class="pr-3">Edit</a>
+                                    <a href="/delete-listing?listing=${listing.id}">Delete</a>
+                                    </div>
                                 </c:when>
+                                <c:otherwise>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-dark button" onclick="sendID(${listing.id})">More Info</button>
+                                        <br>
+                                    </div>
+                                </c:otherwise>
                             </c:choose>
-                        </div>
                     </div>
             </c:forEach>
             </div>
@@ -61,27 +65,27 @@
 
 
         <div class="container">
-            <h2 class="lg-font">Volunteer Opportunities</h2>
+            <h2 class="lg-font text-center text-md-left">Volunteer Opportunities</h2>
         </div>
 
         <div id="volunteer-index-listing">
-            <div class="row w-100 justify-content-center">
+            <div class="w-100 d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
                 <c:forEach var="volunteer" items="${volunteers}" begin="0" end="3">
-                    <div class="index-card gradient col-5 col-md-5 col-lg-2">
+                    <div class="index-card gradient d-flex flex-column pb-4">
 <%--                        <img class="listing-img" src="${listing.imageUrl}" ">--%>
                         <img class="listing-img" src="http://via.placeholder.com/200">
                         <div class="text-container">
                             <h5 class="text-center">${volunteer.title}</h5>
                             <p class="text-center">${volunteer.date}</p>
                         </div>
-                        <div class="button-container p-1">
                             <c:choose>
                                 <c:when test="${sessionScope.user.admin == true}">
-                                    <a href="/update-listing?listing=volunteer&id=${volunteer.id}}">Edit Listing</a>
-                                    <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete Listing</a>
+                                <div class="text-center">
+                                    <a href="/update-listing?listing=volunteer&id=${volunteer.id}}" class="pr-3">Edit</a>
+                                    <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete</a>
+                                </div>
                                 </c:when>
                             </c:choose>
-                        </div>
                     </div>
                 </c:forEach>
             </div>
