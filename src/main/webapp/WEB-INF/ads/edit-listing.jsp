@@ -11,54 +11,66 @@
 <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
 
 <c:choose>
+
     <c:when test="${choiceEdit == 'adoption'}">
-<div class="container">
-    <h1>Edit Listing</h1>
-    <form action="/update-listing" method="post">
-        <div class="form-group">
-            <label for="name">Name of Pet</label>
-            <input id="name" name="name" class="form-control" type="text" value="${listingEdit.name}" required>
+    <div class="container">
+        <div class="card registration-card p-3 gradient">
+            <div class="card-body registration-body">
+                <h1 class="text-center lg-font">Edit Listing</h1>
+                <form action="/update-listing" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="name">Name of Pet</label>
+                            <input id="name" name="name" class="form-control" type="text" value="${listingEdit.name}" required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="type">Type</label>
+                            <select class="form-control" name="type" id="type">
+                                <option value="Cat">Cat</option>
+                                <option value="Dog">Dog</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="breed">Breed</label>
+                            <input id="breed" name="breed" class="form-control" type="text" value="${listingEdit.breed}" required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="dob">Estimated Age</label>
+                            <input id="dob" name="dob" type="text" class="form-control" value="${listingEdit.dob}" required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" name="gender" id="gender">
+                                <option value="F" selected>F</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="size">Size Description</label>
+                            <input class="form-control" id="size" name="size" type="text" value="${listingEdit.size}" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="conditions">Special Conditions</label>
+                            <br>
+                            <textarea name="conditions" id="conditions" class="form-control" rows="4" cols="50">${listingEdit.conditions}</textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="description">Description</label>
+                            <textarea id="description" name="description" class="form-control" rows="4" cols="50" type="text">${listingEdit.description}</textarea>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-block btn-primary">
+                </form>
+            </div>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="type"></label>
-            <select name="type" id="type">
-                <option value="Cat">Cat</option>
-                <option value="Dog">Dog</option>
-            </select>
-        </div>
 
-        <div class="form-group">
-            <label for="breed">Breed</label>
-            <input id="breed" name="breed" class="form-control" type="text" value="${listingEdit.breed}" required>
-        </div>
-        <div class="form-group">
-            <label for="dob">Estimated Age</label>
-            <input id="dob" name="dob" type="text" class="form-control" value="${listingEdit.dob}" required>
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender</label>
-            <select name="gender" id="gender">
-                <option value="F" selected>F</option>
-                <option value="M">M</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="conditions">Special Conditions</label>
-            <br>
-            <textarea name="conditions" id="conditions" cols="30" rows="5">${listingEdit.conditions}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text">${listingEdit.description}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="size">Size Description</label>
-            <input id="size" name="size" type="text" value="${listingEdit.size}" required>
-        </div>
-        <input type="submit" class="btn btn-block btn-primary">
-    </form>
 </div>
+
+
     </c:when>
         <c:when test="${choiceEdit == 'foster'}">
             <div class="container">
