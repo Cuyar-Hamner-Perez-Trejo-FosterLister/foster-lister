@@ -28,13 +28,13 @@
                 </div>
                 <div class="form-group">
                     <label class="m-0" for="type">Animal Type</label>
-                    <select name="type" id="type" class= onchange="set()" required>
+                    <select name="type" id="type" onchange="set()" required>
                         <option></option>
                         <option value="Cat">Cat</option>
                         <option value="Dog">Dog</option>
                     </select>
                 </div>
-                <div id="image-display" class="form-group d-none">
+                <div id="image-display" class="form-group d-none img-thumbnail">
                     <img src="" alt="Example Image" id="change-image">
                     <button type="button" id="button-image" onclick="set()">Change Image</button>
                     <br>
@@ -80,13 +80,13 @@
                 </div>
                 <div class="form-group">
                     <label class="m-0" for="typeFoster">Animal Type</label>
-                    <select name="type" id="typeFoster" class= onchange="set()" required>
+                    <select name="type" id="typeFoster" onchange="set()" required>
                         <option></option>
                         <option value="Cat">Cat</option>
                         <option value="Dog">Dog</option>
                     </select>
                 </div>
-                <div id="image-displayF" class="form-group d-none">
+                <div id="image-displayF" class="form-group d-none img-thumbnail">
                     <img src="" alt="Example Image" id="change-imageF">
                     <button type="button" id="button-imageF" onclick="set()">Change Image</button>
                     <br>
