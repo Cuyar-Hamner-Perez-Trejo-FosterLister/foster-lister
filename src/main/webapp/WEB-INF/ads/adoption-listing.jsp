@@ -22,7 +22,7 @@
 
     <div class="listing-container gradient mx-auto registration-card p-4">
         <div>
-            <img src="${listing.imageUrl}" style="width: 60%;">
+            <img src="${listing.imageUrl}" style="width: 60%; margin: 10% 20%">
         </div>
         <hr>
         <div class="row">
@@ -37,7 +37,7 @@
                 <hr>
                 <p>Gender: ${listing.gender}</p>
                 <hr>
-                <p>Conditions: ${listing.conditions}</p>
+                <p>Medical Conditions: ${listing.conditions}</p>
                 <hr>
                 <p>Size: ${listing.size}</p>
             </div>
