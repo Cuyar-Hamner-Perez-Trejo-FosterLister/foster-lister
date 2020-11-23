@@ -62,7 +62,7 @@
                             <textarea id="description" name="description" class="form-control" rows="4" cols="50" type="text">${listingEdit.description}</textarea>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-block btn-primary">
+                    <input type="submit" class="btn btn-block btn-dark">
                 </form>
             </div>
         </div>
@@ -130,35 +130,44 @@
                                 <textarea id="description2" name="description" class="form-control" rows="4" cols="50" type="text">${listingEdit.description}</textarea>
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-block btn-primary">
+                        <input type="submit" class="btn btn-block btn-dark">
                     </form>
                 </div>
             </div>
         </div>
+    </c:when>
 
-
-        </c:when>
+<%--Edit Volunteer Listing--%>
     <c:when test="${choiceEdit == 'volunteer'}">
         <div class="container">
-        <form action="/update-listing" method="post">
-            <div class="form-group">
-                <label for="date">Date of Volunteer Work</label>
-                <input id="date" name="date" class="form-control" type="text" value="${listingEdit.date}" required>
+            <div class="card registration-card p-3 gradient">
+                <div class="card-body registration-body">
+                    <h1 class="text-center lg-font">Edit Listing</h1>
+                    <form action="/update-listing" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <smalL><label for="date">Date of Volunteer Work</label></smalL>
+                                <input id="date" name="date" class="form-control" type="text" value="${listingEdit.date}" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <smalL><label for="title">Volunteer Role Title</label></smalL>
+                                <input class="form-control" id="title" name="title" type="text" value="${listingEdit.title}" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <smalL><label for="contact">Contact Information</label></smalL>
+                                <input class="form-control" id="contact" name="contact" type="text" value="${listingEdit.contact}" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <smalL><label for="descriptionVolunteer">Description</label></smalL>
+                                <textarea id="descriptionVolunteer" name="descriptionVolunteer" class="form-control" type="text" rows="4" cols="50">${listingEdit.description}</textarea>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-block btn-dark">
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="title">Volunteer Role Title</label>
-                <input id="title" name="title" type="text" value="${listingEdit.title}" required>
-            </div>
-            <div class="form-group">
-                <label for="descriptionVolunteer">Description</label>
-                <textarea id="descriptionVolunteer" name="descriptionVolunteer" class="form-control" type="text">${listingEdit.description}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="contact">Contact Information</label>
-                <input id="contact" name="contact" type="text" value="${listingEdit.contact}" required>
-            </div>
-            <input type="submit" class="btn btn-block btn-primary">
-        </form>
         </div>
     </c:when>
 </c:choose>
