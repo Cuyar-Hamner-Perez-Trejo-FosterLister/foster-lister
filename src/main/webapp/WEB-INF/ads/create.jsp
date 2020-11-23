@@ -8,6 +8,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
+
     <div class="container">
         <div class="card registration-card gradient">
             <div class="card-body registration-body">
@@ -17,6 +18,7 @@
         </div>
         <div class="mb-4">
             <select  name="choice" id="choice" onChange = "change(this.options[this.selectedIndex].value)">
+
                 <option></option>
                 <option value="adoption">Adoption</option>
                 <option value="foster">Foster</option>
@@ -161,9 +163,11 @@
 </c:choose>
             </div>
         </div>
+
     </div>
     <jsp:include page="../partials/bootstrap-script.jsp" />
     <jsp:include page="/WEB-INF/partials/jquery-script.jsp" />
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
 
 
     <script>
