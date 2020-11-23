@@ -103,6 +103,7 @@ public class MySQLUsersDao implements Users {
         PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error deleting user");
