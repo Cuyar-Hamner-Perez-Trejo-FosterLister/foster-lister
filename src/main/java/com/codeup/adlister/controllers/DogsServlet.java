@@ -18,15 +18,22 @@ public class DogsServlet extends HttpServlet {
 //        if (request.getParameter("choiceFA") == null) {
 
         // Breed Selector Query parameter
-//        if (request.getParameter("choiceB") == null) {
+        if (request.getParameter("choiceB") == null) {
 
         // Gender Selector Query parameter
-        if (request.getParameter("choiceG") == null) {
+//        if (request.getParameter("choiceG") == null) {
 //            request.setAttribute("listings", listings);
             request.getSession().setAttribute("listings", DaoFactory.getListingsDao().allDogs());
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
         } else {
+            // Breed conditional
+            String breed = request.getParameter("choiceB");
+            List<Listing> listing;
+            listing = (List<Listing>) request.getSession().getAttribute("listings");
+            listing.removeIf(item -> !item.getBreed().equals(breed));
+            request.getSession().setAttribute("listings", listing);
+
             // Foster/Adoption conditional
 //            if (request.getParameter("choiceFA").equals("foster")) {
 //                List<Listing> listing;
@@ -39,19 +46,17 @@ public class DogsServlet extends HttpServlet {
 //                request.getSession().setAttribute("listings", listing);
 //            }
 
-            // Breed conditional
-
             // Gender conditional
-            if (request.getParameter("choiceG").equals("M")) {
-                List<Listing> listing;
-                listing = (List<Listing>) request.getSession().getAttribute("listings");
-                listing.removeIf(item -> item.getGender().toString().equals("F"));
-                request.getSession().setAttribute("listings", listing);
-            } else if (request.getParameter("choiceG").equals("F")){
-                List<Listing> listing = (List<Listing>) request.getSession().getAttribute("listings");
-                listing.removeIf(item -> item.getGender().toString().equals("M"));
-                request.getSession().setAttribute("listings", listing);
-            }
+//            if (request.getParameter("choiceG").equals("M")) {
+//                List<Listing> listing;
+//                listing = (List<Listing>) request.getSession().getAttribute("listings");
+//                listing.removeIf(item -> item.getGender().toString().equals("F"));
+//                request.getSession().setAttribute("listings", listing);
+//            } else if (request.getParameter("choiceG").equals("F")){
+//                List<Listing> listing = (List<Listing>) request.getSession().getAttribute("listings");
+//                listing.removeIf(item -> item.getGender().toString().equals("M"));
+//                request.getSession().setAttribute("listings", listing);
+//            }
 
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
