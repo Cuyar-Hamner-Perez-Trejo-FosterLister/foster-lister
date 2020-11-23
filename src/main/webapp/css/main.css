@@ -79,7 +79,7 @@ a:active {
 
 .index-card {
     border-radius: 25px;
-    width: 150px;
+    width: 240px;
     padding-left: 0;
     padding-right: 0;
     margin: 10px;
@@ -103,7 +103,12 @@ a:active {
     bottom: -15px;
     left: 43px;
 }
-
+dt {
+    font-size: 24px;
+}
+dd {
+    padding-bottom: 24px;
+}
 .registration-card {
     margin-top: 50px;
     box-shadow: var(--dark-boxshadow);
