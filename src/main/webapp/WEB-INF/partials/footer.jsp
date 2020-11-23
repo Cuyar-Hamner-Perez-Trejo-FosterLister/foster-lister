@@ -4,7 +4,10 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h6>About</h6>
-                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at lobortis massa. Curabitur laoreet ultrices turpis nec sagittis. Etiam convallis nunc in volutpat condimentum. Maecenas scelerisque tortor in dolor rutrum hendrerit. Curabitur eu varius turpis. Cras eu ex lacus. Phasellus eget ligula risus.</p>
+                <p class="text-justify">We are a nonprofit organization that helps local shelters connect with potential adopters and fosters.
+                    Our shelters attempt to find forever homes or foster homes for homeless animals, reunite lost pets with their families, and give medical care to
+                    animals in need. Volunteer opportunities are posted on our site from our partner organizations that are in need of volunteers. Our mission is work hard to
+                    find animals loving forever homes. </p>
             </div>
 
             <div class="col-xs-6 col-md-3">
