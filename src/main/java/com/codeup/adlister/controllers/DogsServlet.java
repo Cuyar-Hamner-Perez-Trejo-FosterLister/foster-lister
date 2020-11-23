@@ -18,7 +18,9 @@ public class DogsServlet extends HttpServlet {
             request.getParameter("choiceB") == null &&
             request.getParameter("choiceG") == null
         ) {
-            request.getSession().setAttribute("listings", DaoFactory.getListingsDao().allDogs());
+            List<Listing> listing = DaoFactory.getListingsDao().allDogs();
+            request.getSession().setAttribute("listings", listing);
+            request.getSession().setAttribute("lsize", listing.size());
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
 
@@ -28,6 +30,7 @@ public class DogsServlet extends HttpServlet {
             listing = (List<Listing>) request.getSession().getAttribute("listings");
             listing.removeIf(item -> !item.getBreed().equals(breed));
             request.getSession().setAttribute("listings", listing);
+            request.getSession().setAttribute("lsize", listing.size());
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
 
@@ -37,10 +40,12 @@ public class DogsServlet extends HttpServlet {
                 listing = (List<Listing>) request.getSession().getAttribute("listings");
                 listing.removeIf(item -> item.getRoleId() != 2);
                 request.getSession().setAttribute("listings", listing);
+                request.getSession().setAttribute("lsize", listing.size());
             } else if (request.getParameter("choiceFA").equals("adoption")){
                 List<Listing> listing = (List<Listing>) request.getSession().getAttribute("listings");
                 listing.removeIf(item -> item.getRoleId() != 1);
                 request.getSession().setAttribute("listings", listing);
+                request.getSession().setAttribute("lsize", listing.size());
             }
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);
@@ -51,10 +56,12 @@ public class DogsServlet extends HttpServlet {
                 listing = (List<Listing>) request.getSession().getAttribute("listings");
                 listing.removeIf(item -> item.getGender().toString().equals("F"));
                 request.getSession().setAttribute("listings", listing);
+                request.getSession().setAttribute("lsize", listing.size());
             } else if (request.getParameter("choiceG").equals("F")){
                 List<Listing> listing = (List<Listing>) request.getSession().getAttribute("listings");
                 listing.removeIf(item -> item.getGender().toString().equals("M"));
                 request.getSession().setAttribute("listings", listing);
+                request.getSession().setAttribute("lsize", listing.size());
             }
             request.setAttribute("viewListingType", "dogs");
             request.getRequestDispatcher("/WEB-INF/ads/pet-listings.jsp").forward(request, response);

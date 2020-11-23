@@ -69,6 +69,26 @@
                                 <option value="F">Female</option>
                             </select>
                         </div>
+                        <div class="form-group text-center">
+                            <c:choose>
+                                <c:when test="${lsize > 1}">
+                                    <hr>
+                                    <p class="text-center">${lsize} results found</p>
+                                    <hr>
+                                </c:when>
+                                <c:when test="${lsize == 1}">
+                                    <hr>
+                                    <p class="text-center">${lsize} result found</p>
+                                    <hr>
+                                </c:when>
+                                <c:when test="${lsize == 0}">
+                                    <hr>
+                                    <p class="text-center">${lsize} results found</p>
+                                    <button type="button" id="reset-btn" name="reset-btn" class="btn btn-dark button" onclick="resetFilter()">Reset filter</button>
+                                    <hr>
+                                </c:when>
+                            </c:choose>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -113,6 +133,7 @@
         let endpoint = "${viewListingType}";
         const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
         const change = (query, params) => window.location.assign("/" + endpoint + query + params);
+        const resetFilter = () => window.location.assign("/" + endpoint);
     </script>
 
 </body>
