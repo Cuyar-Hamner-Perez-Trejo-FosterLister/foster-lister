@@ -18,7 +18,7 @@ public class DeleteUserAsAdminServlet extends HttpServlet{
         long userId = Long.parseLong(request.getParameter("userId"));
 
         DaoFactory.getUsersDao().destroy(userId);
-        response.sendRedirect("/users-list.jsp");
+        response.sendRedirect("/users-list");
 
     }
 
