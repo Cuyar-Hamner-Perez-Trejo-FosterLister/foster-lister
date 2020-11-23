@@ -142,7 +142,7 @@ a:active {
 
 .form-control:focus{
     border-color: #f0f3f0;  box-shadow: none; -webkit-box-shadow: none;
-    background: var(--darkteal);
+    background: var(--containergrey);
 }
 
 

@@ -20,12 +20,30 @@
         </c:when>
     </c:choose>
 
+<%--    <div class="container">--%>
+<%--        <h1>Welcome, ${sessionScope.user.firstName}!</h1>--%>
+<%--        <p>${user.email}</p--%>
+<%--        <p>${user.address}</p--%>
+<%--        <p>${user.phoneNumber}</p>--%>
+<%--        <p>${user.numberOfPets}</p--%>
+<%--    </div>--%>
+
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.firstName}!</h1>
-        <p>${user.email}</p
-        <p>${user.address}</p
-        <p>${user.phoneNumber}</p>
-        <p>${user.numberOfPets}</p
+        <div class="card gradient">
+            <div class="card-body">
+                <div class="profile-picture">
+
+                </div>
+                <div class="profile-info">
+                    <p>${user.firstName}</p>
+                    <p>${user.lastName}</p>
+                    <p>${user.email}</p>
+                    <p>${user.address}</p
+                    <p>${user.phoneNumber}</p>
+                    <p>${user.numberOfPets}</p
+                </div>
+            </div>
+        </div>
     </div>
 
     <jsp:include page="partials/footer.jsp" />

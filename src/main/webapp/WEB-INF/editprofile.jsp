@@ -27,34 +27,37 @@
     </c:choose>
 
     <div class="container">
-        <h1>Edit Profile</h1>
-        <form action="/update-user" method="POST">
-            <div class="form-group">
+        <div class="card registration-card gradient">
+            <div class="card-body">
+                <h1>Edit Profile</h1>
+                <form action="/update-user" method="POST">
+                    <div class="form-group">
+                        <label for="address">Edit Address</label>
+                        <br>
+                        <textarea class="form-control dark-form" id="address" name="address" rows="1" cols="100">${user.address}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Edit Phone Number</label>
+                        <input id="phone" name="phonenumber" class="form-control dark-form" type="text" value=${user.phoneNumber}>
+                    </div>
+                    <div class="form-group">
+                        <label for="pets">Edit Number of Pets</label>
+                        <input id="pets" name="pets" class="form-control dark-form" type="text" value=${user.numberOfPets}>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Reset Password</label>
+                        <input id="password" name="password" class="form-control dark-form" type="password" placeholder="Edit Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input id="confirm_password" name="confirm_password" class="form-control dark-form" type="password" placeholder="Confirm Password">
+                    </div>
 
-                <label for="address">Edit Address</label>
-                <textarea id="address" name="address" rows="4" cols="50">${user.address}</textarea>
-
+                    <input type="submit" class="btn btn-dark btn-block" value="Edit">
+                    <input type="submit" class="btn btn-dark btn-block" value="Delete Profile">
+                </form>
             </div>
-            <div class="form-group">
-                <label for="phone">Edit Phone Number</label>
-                <input id="phone" name="phonenumber" class="form-control" type="text" value=${user.phoneNumber}>
-            </div>
-            <div class="form-group">
-                <label for="pets">Edit Number of Pets</label>
-                <input id="pets" name="pets" class="form-control" type="text" value=${user.numberOfPets}>
-            </div>
-            <div class="form-group">
-                <label for="password">Reset Password</label>
-                <input id="password" name="password" class="form-control" type="password" placeholder="Edit Password">
-            </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password" placeholder="Confirm Password">
-            </div>
-
-            <input type="submit" class="btn btn-primary btn-block" value="Edit">
-            <input type="submit" class="btn btn-primary btn-block" value="Delete Profile">
-        </form>
+        </div>
     </div>
     <jsp:include page="partials/footer.jsp" />
     <jsp:include page="partials/bootstrap-script.jsp" />
