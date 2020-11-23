@@ -73,7 +73,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Foster Lister will review your request and will get back to you in a few days.</p>
-                    <p>If you have any questions please visit our <a href="#">FAQ Page</a> or email us at staff@fosterlister.com </p>
+                    <p>If you have any questions please visit our <a href="/faq">FAQ Page</a> or email us at staff@fosterlister.com </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Request</button>
