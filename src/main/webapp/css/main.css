@@ -73,10 +73,6 @@ a:active {
     position: relative;
 }
 
-#index-listing, #volunteer-listing {
-    display: flex;
-}
-
 .index-card {
     border-radius: 25px;
     width: 150px;
@@ -85,7 +81,6 @@ a:active {
     margin: 10px;
     height: 350px;
     box-shadow: var(--dark-boxshadow);
-    background: #4E4376;
 }
 
 .listing-img {
@@ -137,6 +132,10 @@ a:active {
     border: var(--textwhite) 3px none;
 }
 
+.listing-container {
+    width: 90%
+}
+
 @media only screen and (min-width: 768px) {
     .button-container {
         position: absolute;
@@ -160,5 +159,9 @@ a:active {
     .profile-container {
         display: grid;
         width: 30%;
+    }
+
+    .listing-container {
+        width: 50%
     }
 }
