@@ -27,43 +27,45 @@
         </c:when>
     </c:choose>
 
-    <table class="table mt-3">
-        <thead class="thead-light">
-        <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Address</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col"># of Pets</th>
-            <th scope="col">Delete</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="table-style container gradient p-4 registration-card">
+        <table class="table table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col"># of Pets</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
 
-            <c:forEach var="user" items="${users}">
-                <tr>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
-                    <td>${user.address}</td>
-                    <td>${user.phoneNumber}</td>
-                    <td>${user.email}</td>
-                    <td>${user.numberOfPets}</td>
-                    <c:choose>
-                        <c:when test="${user.admin == false}">
-                            <form action="/delete-user" method="POST">
-                                <input type="hidden" value="${user.id}" name="userId">
-                            <td><input type="submit" class="btn btn-primary btn-block" value="Delete Profile"></td>
-                            </form>
-                        </c:when>
-                        <c:otherwise>
-                            <div></div>
-                        </c:otherwise>
-                    </c:choose>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+                <c:forEach var="user" items="${users}">
+                    <tr>
+                        <td>${user.firstName}</td>
+                        <td>${user.lastName}</td>
+                        <td>${user.address}</td>
+                        <td>${user.phoneNumber}</td>
+                        <td>${user.email}</td>
+                        <td>${user.numberOfPets}</td>
+                        <c:choose>
+                            <c:when test="${user.admin == false}">
+                                <form action="/delete-user" method="POST">
+                                    <input type="hidden" value="${user.id}" name="userId">
+                                <td><input type="submit" class="btn btn-dark btn-sm" value="Delete Profile"></td>
+                                </form>
+                            </c:when>
+                            <c:otherwise>
+                                <div></div>
+                            </c:otherwise>
+                        </c:choose>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
     <jsp:include page="partials/footer.jsp" />
     <jsp:include page="partials/bootstrap-script.jsp" />
 </body>
