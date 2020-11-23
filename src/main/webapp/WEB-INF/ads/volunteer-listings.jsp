@@ -33,7 +33,7 @@
                     <c:forEach var="volunteer" items="${volunteers}">
                         <div class="">
                             <div class="index-card gradient d-flex flex-column pb-4">
-                                <img class="listing-img" src="http://via.placeholder.com/200">
+                                <img class="listing-img" src="/images/Foster.gif" style="height: 200px; width: 100%">
                                 <div class="text-container">
                                     <h4 class="text-center">${volunteer.title}</h4>
                                     <p class="text-center"><small>${volunteer.date}</small></p>

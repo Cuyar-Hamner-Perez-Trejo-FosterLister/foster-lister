@@ -72,8 +72,7 @@
             <div class="w-100 d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
                 <c:forEach var="volunteer" items="${volunteers}" begin="0" end="3">
                     <div class="index-card gradient d-flex flex-column pb-4">
-<%--                        <img class="listing-img" src="${listing.imageUrl}" ">--%>
-                        <img class="listing-img" src="http://via.placeholder.com/200">
+                        <img class="listing-img" src="/images/Foster.gif" style="height: 200px; width: 100%">
                         <div class="text-container">
                             <h5 class="text-center">${volunteer.title}</h5>
                             <p class="text-center">${volunteer.date}</p>

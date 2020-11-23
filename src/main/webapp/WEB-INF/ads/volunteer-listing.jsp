@@ -22,8 +22,7 @@
     <div class="listing-container gradient mx-auto registration-card p-4">
         <div class="row">
             <div class="col-md-6">
-<%--            <img src="${volunteer.imageUrl}" style="width: 60%;">--%>
-                <img src="http://via.placeholder.com/200" style="width: 60%; margin: 20%;">
+                <img src="/images/Foster.gif" style="width: 60%; margin: 20%;">
             </div>
             <hr>
             <div class="col-md-6 my-auto">
