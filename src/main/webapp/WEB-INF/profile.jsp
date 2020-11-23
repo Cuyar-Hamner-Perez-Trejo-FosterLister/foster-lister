@@ -22,7 +22,7 @@
 
     <div class="profile-container gradient mx-auto registration-card justify-content-center p-4">
         <div class="mx-auto">
-            <img class="profile-picture" src="http://via.placeholder.com/200">
+            <img class="profile-picture" src="https://fer-uig.glitch.me?uuid=777">
         </div>
         <div class="profile-info text-center pt-4">
             <h3>${user.firstName} ${user.lastName}</h3>
