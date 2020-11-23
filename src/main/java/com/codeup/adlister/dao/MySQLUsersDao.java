@@ -42,8 +42,10 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, email);
             ResultSet rs = stmt.executeQuery();
-            rs.next();
-            return extractUser(rs);
+            if( rs.next()) {
+                return extractUser(rs);
+            }
+            return null;
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by email", e);
         }
