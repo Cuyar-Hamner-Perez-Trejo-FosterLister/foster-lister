@@ -103,10 +103,9 @@
     <jsp:include page="/WEB-INF/partials/bootstrap-script.jsp" />
 
     <script>
+        let endpoint = "${viewListingType}";
         const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
-        let endpoint = '/dogs'
-
-        const change = (query, params) => window.location.assign(endpoint + query + params);
+        const change = (query, params) => window.location.assign("/" + endpoint + query + params);
     </script>
 
 </body>
