@@ -85,6 +85,12 @@
                                     <a href="/delete-listing?listing=volunteer&id=${volunteer.id}">Delete</a>
                                 </div>
                                 </c:when>
+                                <c:otherwise>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-dark button" onclick="sendVolunteerID(${volunteer.id})">More Info</button>
+                                        <br>
+                                    </div>
+                                </c:otherwise>
                             </c:choose>
                     </div>
                 </c:forEach>
@@ -98,7 +104,9 @@
 
         <script>
             const sendID = (id) => window.location.replace("/listing-info?listing=" + id);
+            const sendVolunteerID = (id) => window.location.replace("/volunteer-info?volunteer=" + id);
         </script>
+
 
 </body>
 </html>
