@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: blossomperez
-  Date: 11/20/20
-  Time: 6:45 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -25,23 +18,27 @@
             <jsp:include page="/WEB-INF/partials/admin-navbar.jsp" />
         </c:when>
     </c:choose>
-    <table class="table">
-        <thead class="thead-light">
-        <tr>
-            <th scope="col">List ID</th>
-            <th scope="col">Request Date</th>
-        </tr>
-        </thead>
-        <tbody>
+
+    <div class="table-style container gradient p-4 registration-card">
+        <table class="table table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">List ID</th>
+                <th scope="col">Request Date</th>
+            </tr>
+            </thead>
+            <tbody>
             <c:forEach var="request" items="${requests}">
                 <tr>
                     <td>${request.listingId}</td>
                     <td>${request.requestDate}</td>
                 </tr>
             </c:forEach>
-        </tbody>
-        <jsp:include page="partials/footer.jsp" />
-        <jsp:include page="partials/bootstrap-script.jsp" />
-    </table>
+            </tbody>
+        </table>
+    </div>
+
+    <jsp:include page="partials/footer.jsp" />
+    <jsp:include page="partials/bootstrap-script.jsp" />
 </body>
 </html>

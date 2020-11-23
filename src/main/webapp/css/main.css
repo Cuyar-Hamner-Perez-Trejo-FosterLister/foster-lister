@@ -116,12 +116,6 @@ a:active {
     box-shadow: var(--light-boxshadow);
 }
 
-
-.form-control:focus{
-    border-color: #f0f3f0;  box-shadow: none; -webkit-box-shadow: none;
-    background: var(--darkteal);
-}
-
 .profile-container {
     display: grid;
     width: 90%;
@@ -134,6 +128,14 @@ a:active {
 
 .listing-container {
     width: 90%
+}
+
+.table-style {
+    margin-bottom: 150px;
+}
+
+td {
+    color: var(--textwhite)
 }
 
 @media only screen and (min-width: 768px) {
