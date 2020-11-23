@@ -32,10 +32,10 @@
                 </c:choose>
                 <form action="/login" method="POST">
                     <div class="form-group">
-                        <input id="email" name="email" class="form-control dark-form" type="text" placeholder="email">
+                        <input id="email" name="email" class="form-control" type="text" placeholder="email">
                     </div>
                     <div class="form-group">
-                        <input id="password" name="password" class="form-control dark-form" type="password" placeholder="password">
+                        <input id="password" name="password" class="form-control" type="password" placeholder="password">
                     </div>
                     <input type="submit" class="btn btn-dark btn-block" value="Log In">
                 </form>
